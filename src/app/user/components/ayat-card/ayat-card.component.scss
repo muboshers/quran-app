@@ -1,0 +1,30 @@
+.ayat-card {
+  padding: 1rem;
+  margin: 15px 0;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  position: relative;
+  cursor: pointer;
+  &,
+  * {
+    background-color: var(--box-color);
+  }
+
+  button {
+    &,
+    * {
+      background-color: var(--background-color);
+    }
+    &:nth-child(2) {
+      margin: 10px 0;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .ayat-card__name {
+    display: block;
+  }
+}

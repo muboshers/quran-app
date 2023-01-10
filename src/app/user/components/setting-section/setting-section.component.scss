@@ -1,0 +1,52 @@
+.color__list {
+  position: relative;
+  margin-top: 20px;
+
+  .color-group {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    .color-item {
+      width: 45px;
+      height: 45px;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+    .color-info {
+      font-size: 12px;
+    }
+    &:nth-child(2) {
+      margin: 0 10px;
+    }
+
+    &.light {
+      .color-item {
+        background-color: #fff;
+      }
+    }
+
+    &.dark {
+      .color-item {
+        background-color: #2b2b2b;
+      }
+    }
+
+    &.sofia {
+      .color-item {
+        background-color: #f8ebd5;
+      }
+    }
+  }
+}
+.language__handler {
+  padding: 5px 12px;
+  margin-top: 15px;
+  color: var(--text-color);
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--box-color);
+}

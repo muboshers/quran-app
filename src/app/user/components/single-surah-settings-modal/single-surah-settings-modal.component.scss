@@ -1,0 +1,100 @@
+.surah-page {
+  padding: 0 5px;
+
+  &__header {
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 45px;
+
+    @media screen and (max-width: 575px) {
+      margin-top: 60px;
+      .surah-page__header-action-close {
+        display: none;
+      }
+    }
+    &-btn {
+      width: 80px;
+      height: 35px;
+      background-color: var(--background-color);
+      border-radius: 45px;
+      &:nth-child(2) {
+        margin: 0 10px;
+      }
+
+      &.active {
+        background-color: var(--box-color);
+      }
+    }
+
+    &-action-close {
+      cursor: pointer;
+      background-color: var(--box-color);
+      color: var(--text-color);
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  &__surahs {
+    margin-top: 50px;
+    justify-content: space-between;
+    &-name {
+      flex: 1;
+      border-right: 1px solid var(--text-color);
+      margin-right: 10px;
+    }
+    li {
+      &.active {
+        border-radius: 45px;
+        background-color: var(--box-color);
+      }
+      list-style-type: none;
+      padding: 8px 20px;
+      cursor: pointer;
+      span {
+        margin: 0 5px;
+      }
+      &:hover {
+        background-color: var(--box-color);
+        border-radius: 45px;
+      }
+    }
+  }
+  &__juz {
+    margin-top: 50px;
+    justify-content: space-between;
+    &-search__input {
+      border: none;
+      outline: none;
+      padding: 10px 12px;
+      border-radius: 45px;
+      width: 100%;
+      margin-bottom: 30px;
+      box-shadow: var(--box-shadow);
+      color: var(--text-color);
+      background-color: var(--background-color);
+      &::placeholder {
+        color: var(--text-color);
+      }
+    }
+    li {
+      padding: 8px 12px;
+      list-style-type: none;
+      &:hover {
+        background-color: var(--box-color);
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}

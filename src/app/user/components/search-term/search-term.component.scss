@@ -1,0 +1,38 @@
+.search {
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  background-position: center;
+  background-color: rgb(209, 209, 209);
+  background-image: url("https://wallpaper.dog/large/20515343.jpg");
+
+  &-box {
+    max-width: 550px;
+    width: 550px;
+    border-radius: 45px;
+    &:not(.container, .not-bg) {
+      background-color: var(--box-color);
+    }
+
+    form {
+      width: 100%;
+
+      input {
+        width: 90%;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        background-color: transparent;
+        color: var(--text-color);
+
+        &::placeholder {
+          color: var(--text-color);
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}

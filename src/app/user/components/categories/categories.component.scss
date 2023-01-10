@@ -1,0 +1,20 @@
+.categories {
+  max-width: 85%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  button {
+    height: inherit;
+    width: inherit;
+    padding: 8px 17px;
+    border-radius: 44px;
+    font-size: 12px;
+    margin-top: 10px;
+    background-color: var(--shadow-bg-color) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 95%;
+  }
+}

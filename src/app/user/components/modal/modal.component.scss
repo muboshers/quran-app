@@ -1,0 +1,32 @@
+.modal {
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1002;
+  &__close-btn {
+    position: absolute;
+    top: 1rem;
+    margin: 0 10px;
+    z-index: 1000;
+    display: none;
+  }
+  &-wrapper {
+    position: absolute;
+    width: 300px;
+    bottom: 0;
+    top: 0;
+    padding: 10px 12px;
+    height: 100vh;
+    overflow-x: scroll;
+  }
+  @media screen and (max-width: 575px) {
+    &__close-btn {
+      display: block;
+    }
+    &-wrapper {
+      width: 100%;
+    }
+  }
+}

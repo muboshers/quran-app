@@ -1,0 +1,21 @@
+{
+  "user": {
+    "header": {
+      "title": "Quran App",
+      "settings": {
+        "theme": {
+          "title": "Change Theme",
+          "sofia": "Sofia Theme",
+          "dark": "Dark Theme",
+          "light": "Light Theme"
+        }
+      }
+    },
+    "banner": {
+      "title": "Search By Surah Name"
+    },
+    "main": {
+      "recently": "Recently Read"
+    }
+  }
+}

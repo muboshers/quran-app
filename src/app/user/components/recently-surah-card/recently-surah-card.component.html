@@ -1,0 +1,16 @@
+<div routerLink="surah/2" class="surah not-bg">
+  <div class="surah__header flex align-center justify-between not-bg">
+    <h4 class="surah__header-title">Hud</h4>
+    <span class="surah__header-info"> {{ surah.orderNumber }} </span>
+  </div>
+
+  <h3 class="surah__title">
+    Surah <br />
+    {{ surah.name }}
+  </h3>
+
+  <div class="surah__tajvir flex align-center justify-center">
+    <span class="surah__tajvir-name"> {{ surah.arabicName }}</span>
+    <span class="surah__tajvir_surah-number">{{ surah.verseCount }} Ayahs</span>
+  </div>
+</div>

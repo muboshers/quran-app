@@ -1,0 +1,24 @@
+{
+  "user": {
+    "header": {
+      "title": "Quron Ilovasi",
+      "settings": {
+        "theme": {
+          "title": "Ranglar turkumini o'rgartirish",
+          "sofia": "Sofia",
+          "dark": "Qorong'u",
+          "light": "Yorug'lik"
+        }
+      }
+    },
+    "banner": {
+      "title": "Suralarni ismi bilan qidirish"
+    },
+    "main": {
+      "recently": "Oldingi o'qilganlar"
+    },
+    "surah_card":{
+      "juz":"Juz"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.recently {
+  margin-top: 30px;
+  &__container {
+    background-color: var(--background-color);
+  }
+  &__title {
+    font-weight: 500;
+  }
+  &__list {
+    margin-top: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+    &-item {
+      width: 180px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    &__list {
+      flex-direction: column;
+
+      &-item {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}

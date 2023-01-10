@@ -1,0 +1,42 @@
+.surah {
+  background-color: var(--box-color);
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  border: 2px solid transparent;
+  &:hover {
+    border-color: var(--hover-bg-color);
+    .surah__tajvir {
+      background-color: var(--box-color);
+    }
+  }
+  &__header {
+    &-title {
+      font-weight: 500;
+      font-size: 14px;
+    }
+    &-info {
+      font-size: 14px;
+    }
+  }
+
+  &__title {
+    font-size: 1rem;
+    margin: 15px 0;
+  }
+
+  &__tajvir {
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: var(--background-color);
+    &-name {
+      margin: 10px 0;
+    }
+
+    &_surah-number {
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+  }
+}

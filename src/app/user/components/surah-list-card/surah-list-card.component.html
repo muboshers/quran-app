@@ -1,0 +1,55 @@
+<div
+  class="box"
+  (click)="reventlyHandler(cardInfo)"
+  routerLink="surah/{{ cardInfo.surahId }}"
+  *ngIf="!juz"
+>
+  <div class="surah flex align-center justify-between">
+    <div class="surah-leftside flex align-center">
+      <button class="main__button surah__button mr-1">
+        {{ cardInfo.orderNumber }}
+      </button>
+
+      <div class="surah-info">
+        <h4 class="surah-info__name">{{ cardInfo.name }}</h4>
+        <span class="surah__ayat-info sub__info">Family of Imran</span>
+      </div>
+    </div>
+
+    <div class="surah-rightside flex align-center justify-center">
+      <div class="surah__name">{{ cardInfo.arabicName }}</div>
+      <span class="surah__ayat-info sub__info"
+        >{{ cardInfo.verseCount }} Ayahs</span
+      >
+    </div>
+  </div>
+</div>
+<div class="juzz__list-card" *ngIf="juz">
+  <h4>{{ juz.juzNumber }} {{ "user.surah_card.juz" | translate }}</h4>
+  <div
+    routerLink="surah/3"
+    class="surah flex align-center justify-between"
+    (mousemove)="mouseHandler($event)"
+    (mouseleave)="mouseDestroyHandler($event)"
+    *ngFor="let juzSurah of juz.surahs"
+  >
+    <div class="surah-leftside flex align-center">
+      <button class="main__button surah__button mr-1">
+        {{ juzSurah.surahOrderNumber }}
+      </button>
+
+      <div class="surah-info">
+        <h4 class="surah-info__name">{{ juzSurah.surahName }}</h4>
+        <span class="surah__ayat-info sub__info">Family of Imran</span>
+      </div>
+    </div>
+
+    <div class="surah-rightside flex align-center justify-center">
+      <div class="surah__name">{{ juzSurah.arabicName }}</div>
+      <span class="surah__ayat-info sub__info"
+        >{{ juzSurah.startOrderNumber }} -
+        {{ juzSurah.endOrderNumber }} Ayahs</span
+      >
+    </div>
+  </div>
+</div>

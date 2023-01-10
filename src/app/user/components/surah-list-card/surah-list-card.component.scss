@@ -1,0 +1,62 @@
+.box {
+  padding: 1rem;
+  background-color: var(--box-color);
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  &:hover {
+    border-color: var(--hover-bg-color);
+    .surah {
+      &__button {
+        color: #f3f3f3 !important;
+        background-color: var(--hover-bg-color) !important;
+      }
+    }
+  }
+}
+.surah {
+  padding: 10px;
+  border-radius: 8px;
+  &,
+  & > div {
+    background-color: var(--background-color);
+  }
+
+  cursor: pointer;
+
+  &-rightside {
+    flex-direction: column;
+  }
+
+  .sub__info {
+    font-size: 12px;
+  }
+
+  &__button {
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    border-radius: 0;
+  }
+}
+
+.juzz__list-card {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--box-color);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  border: 1px solid transparent;
+  .surah {
+    margin-top: 10px;
+
+    &:hover {
+      .surah__button {
+        color: #f3f3f3 !important;
+        background-color: var(--hover-bg-color) !important;
+      }
+    }
+  }
+}

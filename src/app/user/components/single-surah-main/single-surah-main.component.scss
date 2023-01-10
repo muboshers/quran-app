@@ -1,0 +1,69 @@
+.single-surah__main-container {
+  margin-top: 200px;
+}
+
+.single-surah__header {
+  background-color: var(--box-color);
+  max-width: 300px;
+  border-radius: 45px;
+  margin: 20px auto;
+  box-shadow: var(--box-shadow);
+  &-btn {
+    padding: 10px 20px;
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    border-radius: 45px;
+    cursor: pointer;
+    &:nth-child(2) {
+      margin-left: 10px;
+    }
+
+    &.active {
+      background-color: var(--background-color);
+    }
+  }
+}
+
+.single-surah-sub__info {
+  margin-top: 20px;
+  font-size: 80px;
+}
+
+.surah-actions {
+  max-width: 800px;
+  margin: 10px auto;
+
+  &__leftside {
+    &-subinfo {
+      opacity: 0.8;
+      font-size: 14px;
+    }
+  }
+
+  &__rightside {
+    .action__button {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: attr(data-before-content);
+        bottom: -100%;
+        width: 100px;
+        padding: 10px;
+        opacity: 0;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.single-surah__lists {
+  max-width: 800px;
+  margin: 30px auto;
+}

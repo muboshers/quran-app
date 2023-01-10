@@ -1,0 +1,31 @@
+.header {
+  position: fixed;
+  top: -100px;
+  width: 100%;
+  display: block;
+  box-shadow: var(--secondary-box-shadow);
+  background-color: var(--secondary-light-color);
+  z-index: 1001;
+  transition: 0.8s ease;
+  &.active-nav {
+    top: 0;
+  }
+
+  &.shadow-none {
+    box-shadow: inherit;
+    background-color: var(--box-color);
+    * {
+      background-color: var(--box-color);
+    }
+
+    .main__button {
+      &,
+      * {
+        background-color: var(--background-color);
+      }
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}

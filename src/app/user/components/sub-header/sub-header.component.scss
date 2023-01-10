@@ -1,0 +1,19 @@
+.sub-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 5px 0;
+  &.main__header-active {
+    padding-top: 70px;
+  }
+  background-color: var(--box-color);
+  z-index: 1000;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  &__surah-name {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

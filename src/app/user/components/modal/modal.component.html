@@ -1,0 +1,12 @@
+<div class="modal" (click)="closeModal()">
+  <div class="modal-wrapper" [style]="position" (click)="modalChild($event)">
+    <button
+      (click)="closeModal()"
+      class="main__button modal__close-btn"
+      [style]="position"
+    >
+      <fa-icon [icon]="faClose"></fa-icon>
+    </button>
+    <ng-content></ng-content>
+  </div>
+</div>

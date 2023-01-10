@@ -1,0 +1,26 @@
+<div
+  id="main-topHeader"
+  class="header wrapper pt-1 pb-1 {{
+    userController.isScroll ? 'active-nav' : ''
+  }} {{ userController.isSubHeader ? 'shadow-none' : '' }} "
+>
+  <div class="container header__container flex align-center justify-between">
+    <div class="header__leftside flex align-center">
+      <button class="main__button">
+        <fa-icon [icon]="faBars"></fa-icon>
+      </button>
+      <h4 routerLink="/" class="ml-1 cursor-pointer">
+        {{ "user.header.title" | translate }}
+      </h4>
+    </div>
+
+    <div class="header__rightside flex align-center">
+      <button class="main__button">
+        <fa-icon [icon]="faUserFriends"></fa-icon>
+      </button>
+      <button (click)="handleOpenSettings()" class="main__button ml-1">
+        <fa-icon [icon]="faGear"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

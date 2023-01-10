@@ -1,0 +1,46 @@
+<div class="container single-surah__main-container">
+  <div class="single-surah__header flex align-center justify-center">
+    <button
+      class="single-surah__header-btn {{ isTranslation ? 'active' : '' }}"
+    > 
+      Translation
+    </button>
+    <button
+      class="single-surah__header-btn {{ !isTranslation ? 'active' : '' }}"
+    >
+      Reading
+    </button>
+  </div>
+
+  <div class="single-surah-sub__info flex align-center justify-center">
+    حليف عظيم
+  </div>
+  <div class="surah-actions flex align-center justify-between">
+    <div class="surah-actions__leftside">
+      <p class="surah-actions__leftside-subinfo">Translation By</p>
+      <h4 class="surah-author__name">Dr. Mustafa Khattab, the Clear Quran</h4>
+    </div>
+    <div class="surah-actions__rightside">
+      <button
+        class="main__button action__button"
+        data-before-content="Play Audio"
+      >
+        <fa-icon [icon]="faPlayCircle"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="single-surah__lists">
+    <app-ayat-card></app-ayat-card>
+    <app-ayat-card></app-ayat-card>
+    <app-ayat-card></app-ayat-card>
+    <app-ayat-card></app-ayat-card>
+    <app-ayat-card></app-ayat-card>
+    <app-ayat-card></app-ayat-card>
+    <app-ayat-card></app-ayat-card>
+    <app-ayat-card></app-ayat-card>
+    <app-ayat-card></app-ayat-card>
+    <app-ayat-card></app-ayat-card>
+    <app-ayat-card></app-ayat-card>
+  </div>
+</div>

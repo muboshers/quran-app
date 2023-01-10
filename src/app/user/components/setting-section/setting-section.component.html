@@ -1,0 +1,53 @@
+<app-modal
+  [dispatchType]="openSettingsProps"
+  position="right:0%;"
+  *ngIf="userController.setting"
+>
+  <div class="settings-modal__header">
+    <h4 class="settings-modal__title">
+      {{ "user.header.settings.theme.title" | translate }}
+    </h4>
+
+    <div class="color__list flex align-center">
+      <div class="color-group dark" (click)="themeChange('dark-theme')">
+        <div class="color-item"></div>
+        <span class="color-info">
+          {{ "user.header.settings.theme.dark" | translate }}
+        </span>
+      </div>
+
+      <div class="color-group light" (click)="themeChange('light-theme')">
+        <div class="color-item"></div>
+        <span class="color-info">
+          {{ "user.header.settings.theme.light" | translate }}
+        </span>
+      </div>
+    </div>
+
+    <select
+      class="language__handler"
+      #languageHandler
+      (change)="handleLanguageChange(languageHandler.value)"
+    >
+      <option
+        class="language__handler-option"
+        *ngFor="let language of languages"
+        [selected]="userController.lang === language.value"
+        [value]="language.value"
+      >
+        {{ language.name }}
+      </option>
+    </select>
+
+    <!--  AUTHORS -->
+    <select class="language__handler" #author>
+      <option
+        class="language__handler-option"
+        *ngFor="let author of authors"
+        [value]="author.name"
+      >
+        {{ author.name }}
+      </option>
+    </select>
+  </div>
+</app-modal>
