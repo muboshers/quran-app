@@ -2,7 +2,7 @@
   <div class="single-surah__header flex align-center justify-center">
     <button
       class="single-surah__header-btn {{ isTranslation ? 'active' : '' }}"
-    > 
+    >
       Translation
     </button>
     <button
@@ -13,12 +13,14 @@
   </div>
 
   <div class="single-surah-sub__info flex align-center justify-center">
-    حليف عظيم
+    {{ userState.singleSurah?.surah?.name }}
   </div>
   <div class="surah-actions flex align-center justify-between">
     <div class="surah-actions__leftside">
       <p class="surah-actions__leftside-subinfo">Translation By</p>
-      <h4 class="surah-author__name">Dr. Mustafa Khattab, the Clear Quran</h4>
+      <h4 class="surah-author__name">
+        Dr. {{ userState.selectedAuthor?.fullName }} the Clear Quran
+      </h4>
     </div>
     <div class="surah-actions__rightside">
       <button

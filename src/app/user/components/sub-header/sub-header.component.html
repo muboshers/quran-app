@@ -1,7 +1,7 @@
-<div class="sub-header {{ isScroll ? 'main__header-active' : '' }}">
+<div class="sub-header {{ userState.isScroll ? 'main__header-active' : '' }}">
   <div class="sub-header__container container flex">
     <h4 (click)="handleOpenModal()" class="sub-header__surah-name">
-      Al-Baqarah
+      {{ userState.singleSurah?.surahName }}
     </h4>
   </div>
 </div>

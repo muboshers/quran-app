@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { UserServiceService } from '../../service/user-service.service';
 import { userStataType } from '../../store/reducer';
 import {
+  authorChange,
   AUTHORS__HANDLER,
   changeLanguage,
   isSubHeader,
@@ -25,6 +26,9 @@ export class HomeComponent implements OnInit {
   lang = localStorage.getItem('lang')
     ? JSON.parse(localStorage.getItem('lang') || 'kiril')
     : 'uz';
+  author =
+    localStorage.getItem('author') &&
+    JSON.parse(localStorage.getItem('author') || 'kiril');
   constructor(
     private translate: TranslateService,
     private store: Store<glabalState>,
@@ -60,6 +64,9 @@ export class HomeComponent implements OnInit {
 
     // get all authors
     this.userService.getAllAuthors('INTERPRETER').subscribe((authors) => {
+      this.store.dispatch(
+        authorChange({ selectedAuthor: this.author ?? authors[0] })
+      );
       this.store.dispatch(AUTHORS__HANDLER({ authors }));
     });
   }

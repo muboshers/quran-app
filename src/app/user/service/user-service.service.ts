@@ -1,6 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Authors, JuzBody, JuzList, Languages, SurahList } from '../types';
+import {
+  Authors,
+  JuzBody,
+  JuzList,
+  Languages,
+  SingleSurah,
+  SurahList,
+} from '../types';
 
 const API_URL: string = 'https://quranuz-backend.up.railway.app/api';
 const API_VERSION: string = 'v1';
@@ -40,6 +47,13 @@ export class UserServiceService {
   getAllAuthors(authorQuery: 'INTERPRETER' | 'RECITER') {
     return this.http.get<Authors[]>(
       `${API_URL}/${API_VERSION}/author?authorType=${authorQuery}`
+    );
+  }
+
+  // get surah by id
+  getSurahById(id: string) {
+    return this.http.get<SingleSurah>(
+      `${API_URL}/${API_VERSION}/surah/${id}/${LANGUAGE_ID}`
     );
   }
 }

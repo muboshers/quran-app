@@ -52,3 +52,29 @@ export interface Authors {
   type: 'INTERPRETER' | 'RECITOR';
   id: number;
 }
+
+export interface SingleSurah {
+  success: true;
+  data: SurahData;
+}
+
+export interface SurahData {
+  surah: SingleDataSurah;
+  surahId: number;
+  surahName: string;
+  languageId: number;
+  location: SingleSurahLocation;
+  locationId: number;
+}
+
+export interface SingleDataSurah {
+  name: string;
+  verseCount: number;
+  orderNumber: number;
+}
+
+export interface SingleSurahLocation {
+  id: number;
+  name: string;
+  deleted: boolean;
+}

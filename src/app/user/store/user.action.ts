@@ -1,5 +1,12 @@
 import { createAction, props } from '@ngrx/store';
-import { Authors, Juz, Language, Surah } from '../types';
+import {
+  Authors,
+  Juz,
+  Language,
+  SingleDataSurah,
+  Surah,
+  SurahData,
+} from '../types';
 
 interface IAction {
   readonly lang: string;
@@ -14,6 +21,10 @@ export const openSetting = createAction('[Settings Component] OpenSetting');
 export const openCategory = createAction('[Category Component] OpenCategory');
 export const changeLanguage = createAction('Langauge Change', props<IAction>());
 export const openSingleSurahModal = createAction('Open Single Surah Modal');
+export const authorChange = createAction(
+  '[Author Change]',
+  props<{ selectedAuthor: Authors }>()
+);
 export const isScrollHandler = createAction(
   '[IsScroll Handler Component]',
   props<{ isScroll: boolean }>()
@@ -37,4 +48,9 @@ export const JUZ__HANDLER = createAction(
 export const AUTHORS__HANDLER = createAction(
   '[AUTHORS__HANDLER]',
   props<{ authors: Authors[] }>()
+);
+
+export const SINGLE__SURAH__HANDLER = createAction(
+  '[Single Surah Handler]',
+  props<{ singleSurah: SurahData }>()
 );

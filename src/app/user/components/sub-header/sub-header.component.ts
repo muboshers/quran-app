@@ -9,10 +9,10 @@ import { openSingleSurahModal } from '../../store/user.action';
   selector: 'app-sub-header',
 })
 export class SubHeaderComponent {
-  isScroll: boolean = true;
+  userState!:userStataType;
   constructor(private store: Store<{ user: userStataType }>) {
     this.store.select('user').subscribe((result) => {
-      this.isScroll = result.isScroll;
+      this.userState = result;
     });
   }
 
