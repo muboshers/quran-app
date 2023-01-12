@@ -1,4 +1,4 @@
-import { Juz, Language, Surah } from '../types';
+import { Authors, Juz, Language, Surah } from '../types';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 import { createReducer, on } from '@ngrx/store';
@@ -12,6 +12,7 @@ import {
   LANGUAGE__HANDLER,
   SURAHS__HANDLER,
   JUZ__HANDLER,
+  AUTHORS__HANDLER,
 } from './user.action';
 
 export interface userStataType {
@@ -24,6 +25,7 @@ export interface userStataType {
   language?: Language[];
   surahs?: Surah[];
   juz?: Juz[];
+  authors?: Authors[];
 }
 
 export const initialState: userStataType = {
@@ -36,6 +38,7 @@ export const initialState: userStataType = {
   language: undefined,
   surahs: undefined,
   juz: undefined,
+  authors: undefined,
 };
 
 export const userReducer = createReducer(
@@ -51,5 +54,6 @@ export const userReducer = createReducer(
   on(isScrollHandler, (state, { isScroll }) => ({ ...state, isScroll })),
   on(LANGUAGE__HANDLER, (state, { language }) => ({ ...state, language })),
   on(SURAHS__HANDLER, (state, { surahs }) => ({ ...state, surahs })),
-  on(JUZ__HANDLER, (state, { juz }) => ({ ...state, juz }))
+  on(JUZ__HANDLER, (state, { juz }) => ({ ...state, juz })),
+  on(AUTHORS__HANDLER, (state, { authors }) => ({ ...state, authors }))
 );

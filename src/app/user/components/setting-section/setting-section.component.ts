@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { userStataType } from '../../store/reducer';
 import { changeLanguage, openSetting } from '../../store/user.action';
-import { Language } from '../../types';
+import { Authors, Language } from '../../types';
 
 interface LangaugeReview extends Language {
   readonly value: 'uz' | 'kiril';
@@ -18,14 +18,6 @@ interface LangaugeReview extends Language {
 export class SettingSectionComponent {
   userController!: userStataType;
   openSettingsProps = openSetting;
-  authors = [
-    {
-      name: 'Shayx Muhammad Sodiq Muhammad Yusuf',
-    },
-    {
-      name: 'Shayx Muhammad Sodiq Muhammad Yusuf',
-    },
-  ];
   languages?: LangaugeReview[];
   constructor(
     private store: Store<{ user: userStataType }>,
@@ -40,6 +32,15 @@ export class SettingSectionComponent {
         }));
       }
     });
+  }
+
+  authorSelect(query: string) {
+    const author = this.userController.authors?.find(
+      (author) => author.fullName.toLowerCase() === query.toLowerCase()
+    );
+    if (author) {
+      localStorage.setItem('author', JSON.stringify(author));
+    }
   }
 
   themeChange(theme: string) {

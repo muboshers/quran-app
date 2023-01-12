@@ -43,6 +43,12 @@ export interface JuzInfo {
 }
 
 export interface JuzBody {
-  value:string;
-  sortDirection:string;
+  value: string;
+  sortDirection: string;
+}
+
+export interface Authors {
+  fullName: string;
+  type: 'INTERPRETER' | 'RECITOR';
+  id: number;
 }

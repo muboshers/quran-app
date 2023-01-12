@@ -4,13 +4,14 @@ import { TranslateService } from '@ngx-translate/core';
 import { UserServiceService } from '../../service/user-service.service';
 import { userStataType } from '../../store/reducer';
 import {
+  AUTHORS__HANDLER,
   changeLanguage,
   isSubHeader,
   JUZ__HANDLER,
   LANGUAGE__HANDLER,
   SURAHS__HANDLER,
 } from '../../store/user.action';
-import { Languages } from '../../types';
+import { Authors, Languages } from '../../types';
 
 interface glabalState {
   user: userStataType;
@@ -56,5 +57,10 @@ export class HomeComponent implements OnInit {
           })
         );
       });
+
+    // get all authors
+    this.userService.getAllAuthors('INTERPRETER').subscribe((authors) => {
+      this.store.dispatch(AUTHORS__HANDLER({ authors }));
+    });
   }
 }

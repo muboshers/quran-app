@@ -40,13 +40,17 @@
     </select>
 
     <!--  AUTHORS -->
-    <select class="language__handler" #author>
+    <select
+      class="language__handler"
+      #author
+      (change)="authorSelect(author.value)"
+    >
       <option
         class="language__handler-option"
-        *ngFor="let author of authors"
-        [value]="author.name"
+        *ngFor="let author of userController.authors"
+        [value]="author.fullName"
       >
-        {{ author.name }}
+        {{ author.fullName }}
       </option>
     </select>
   </div>

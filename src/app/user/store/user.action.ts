@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Juz, Language, Surah } from '../types';
+import { Authors, Juz, Language, Surah } from '../types';
 
 interface IAction {
   readonly lang: string;
@@ -32,4 +32,9 @@ export const SURAHS__HANDLER = createAction(
 export const JUZ__HANDLER = createAction(
   '[Juz Handler]',
   props<{ juz: Juz[] }>()
+);
+
+export const AUTHORS__HANDLER = createAction(
+  '[AUTHORS__HANDLER]',
+  props<{ authors: Authors[] }>()
 );

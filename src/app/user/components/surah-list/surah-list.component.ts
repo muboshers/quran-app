@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { userStataType } from '../../store/reducer';
 import { UserServiceService } from '../../service/user-service.service';
-import { JUZ__HANDLER } from '../../store/user.action';
+import { JUZ__HANDLER, SURAHS__HANDLER } from '../../store/user.action';
 
 @Component({
   selector: 'app-surah-list',
@@ -51,6 +51,20 @@ export class SurahListComponent implements OnInit {
                 juz: juz.data,
               })
             );
+          });
+      }
+    } else {
+      if (this.isSorting) {
+        this.userService
+          .getAllSurahByFilter({ value: '', sortDirection: 'desc' })
+          .subscribe((result) => {
+            this.store.dispatch(SURAHS__HANDLER({ surahs: result.data }));
+          });
+      } else {
+        this.userService
+          .getAllSurahByFilter({ value: '', sortDirection: 'asc' })
+          .subscribe((result) => {
+            this.store.dispatch(SURAHS__HANDLER({ surahs: result.data }));
           });
       }
     }
