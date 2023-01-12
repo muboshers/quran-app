@@ -33,16 +33,9 @@
   </div>
 
   <div class="single-surah__lists">
-    <app-ayat-card></app-ayat-card>
-    <app-ayat-card></app-ayat-card>
-    <app-ayat-card></app-ayat-card>
-    <app-ayat-card></app-ayat-card>
-    <app-ayat-card></app-ayat-card>
-    <app-ayat-card></app-ayat-card>
-    <app-ayat-card></app-ayat-card>
-    <app-ayat-card></app-ayat-card>
-    <app-ayat-card></app-ayat-card>
-    <app-ayat-card></app-ayat-card>
-    <app-ayat-card></app-ayat-card>
+    <app-ayat-card
+      *ngFor="let surah of userState.verse"
+      [verseDetail]="surah"
+    ></app-ayat-card>
   </div>
 </div>

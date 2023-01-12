@@ -78,3 +78,19 @@ export interface SingleSurahLocation {
   name: string;
   deleted: boolean;
 }
+
+export interface VerseBySurahLang {
+  authorId: number;
+  langId: number;
+  surahId: number;
+}
+
+export interface VerseBySurahs {
+  id: number;
+  verseKey: string;
+  arabic: string;
+  orderNumber: number;
+  pageNumber: number;
+  translation: string;
+  description: string | null;
+}

@@ -5,6 +5,7 @@ import {
   SingleDataSurah,
   Surah,
   SurahData,
+  VerseBySurahs,
 } from '../types';
 
 import { createReducer, on } from '@ngrx/store';
@@ -21,6 +22,7 @@ import {
   AUTHORS__HANDLER,
   SINGLE__SURAH__HANDLER,
   authorChange,
+  SINGLE__VERSE__HANDLER,
 } from './user.action';
 
 export interface userStataType {
@@ -34,6 +36,7 @@ export interface userStataType {
   surahs?: Surah[];
   juz?: Juz[];
   authors?: Authors[];
+  verse?: VerseBySurahs[];
   singleSurah?: SurahData;
   selectedAuthor?: Authors;
 }
@@ -50,6 +53,7 @@ export const initialState: userStataType = {
   juz: undefined,
   authors: undefined,
   singleSurah: undefined,
+  verse: undefined,
   selectedAuthor: undefined,
 };
 
@@ -64,11 +68,18 @@ export const userReducer = createReducer(
   })),
   on(changeLanguage, (state, { lang }) => ({ ...state, lang })),
   on(isScrollHandler, (state, { isScroll }) => ({ ...state, isScroll })),
-  on(authorChange, (state, { selectedAuthor }) => ({ ...state, selectedAuthor })),
+  on(authorChange, (state, { selectedAuthor }) => ({
+    ...state,
+    selectedAuthor,
+  })),
   on(LANGUAGE__HANDLER, (state, { language }) => ({ ...state, language })),
   on(SURAHS__HANDLER, (state, { surahs }) => ({ ...state, surahs })),
   on(JUZ__HANDLER, (state, { juz }) => ({ ...state, juz })),
   on(AUTHORS__HANDLER, (state, { authors }) => ({ ...state, authors })),
+  on(SINGLE__VERSE__HANDLER, (state, { verse }) => ({
+    ...state,
+    verse,
+  })),
   on(SINGLE__SURAH__HANDLER, (state, { singleSurah }) => ({
     ...state,
     singleSurah,

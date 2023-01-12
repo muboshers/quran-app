@@ -1,22 +1,21 @@
-<div class="ayat-card">
+<div class="ayat-card" *ngIf="verseDetail">
   <div class="ayat-card-leftside flex justify-between">
     <div class="ayat-card__icons">
-      <button class="main__button">1:1</button>
+      <button class="main__button">{{ verseDetail.verseKey }}</button>
       <button class="main__button">
         <fa-icon [icon]="faMessage"></fa-icon>
       </button>
     </div>
     <div class="ayat-card-rightside">
-      <p class="ayat__arabic">ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ ٣</p>
+      <p class="ayat__arabic">{{ verseDetail.arabic }}</p>
     </div>
   </div>
   <div class="ayat-card__footer flex align-center">
-    <button class="main__button">
-      <fa-icon [icon]="faDotCircle"></fa-icon>
-    </button>
     <span class="ayat-card__name ml-1">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio aliquam
-      quasi quidem!
+      {{ verseDetail.translation }}
     </span>
   </div>
+  <span class="ayat-card__name ml-1 description" *ngIf="verseDetail.description">
+    {{ verseDetail.description }}
+  </span>
 </div>

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faDotCircle, faMessage } from '@fortawesome/free-regular-svg-icons';
+import { VerseBySurahs } from '../../types';
+
 
 @Component({
   templateUrl: './ayat-card.component.html',
@@ -9,4 +11,6 @@ import { faDotCircle, faMessage } from '@fortawesome/free-regular-svg-icons';
 export class AyatCardComponent {
   faMessage = faMessage;
   faDotCircle = faDotCircle;
+
+  @Input() verseDetail!: VerseBySurahs;
 }

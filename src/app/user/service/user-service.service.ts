@@ -7,6 +7,8 @@ import {
   Languages,
   SingleSurah,
   SurahList,
+  VerseBySurahLang,
+  VerseBySurahs,
 } from '../types';
 
 const API_URL: string = 'https://quranuz-backend.up.railway.app/api';
@@ -54,6 +56,13 @@ export class UserServiceService {
   getSurahById(id: string) {
     return this.http.get<SingleSurah>(
       `${API_URL}/${API_VERSION}/surah/${id}/${LANGUAGE_ID}`
+    );
+  }
+
+  // get verse by id
+  getVerseDetail(params: VerseBySurahLang) {
+    return this.http.get<VerseBySurahs[]>(
+      `${API_URL}/${API_VERSION}/verse/by-surah-lang?authorId=${params.authorId}&langId=${LANGUAGE_ID}&surahId=${params.surahId}`
     );
   }
 }

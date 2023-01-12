@@ -6,6 +6,7 @@ import {
   SingleDataSurah,
   Surah,
   SurahData,
+  VerseBySurahs,
 } from '../types';
 
 interface IAction {
@@ -53,4 +54,9 @@ export const AUTHORS__HANDLER = createAction(
 export const SINGLE__SURAH__HANDLER = createAction(
   '[Single Surah Handler]',
   props<{ singleSurah: SurahData }>()
+);
+
+export const SINGLE__VERSE__HANDLER = createAction(
+  '[Single Surah Verse]',
+  props<{ verse: VerseBySurahs[] }>()
 );
