@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Inder&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap);
 
 @font-face {
   font-family: "ProximaVara";
@@ -44,11 +45,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "ProximaVara", sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: 0.2s ease;
 }
 .arabic-font {
-  font-family: "p1-v1", sans-serif !important;
+  font-family: "Reem Kufi", sans-serif !important;
 }
 body {
   color: var(--text-color);
