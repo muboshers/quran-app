@@ -7,7 +7,9 @@
       </button>
     </div>
     <div class="ayat-card-rightside">
-      <p class="ayat__arabic">{{ verseDetail.arabic }}</p>
+      <p class="ayat__arabic  {{ className ? 'arabic-font' : 'font' }}">
+        {{ verseDetail.arabic }}
+      </p>
     </div>
   </div>
   <div class="ayat-card__footer flex align-center">
@@ -15,7 +17,10 @@
       {{ verseDetail.translation }}
     </span>
   </div>
-  <span class="ayat-card__name ml-1 description" *ngIf="verseDetail.description">
+  <span
+    class="ayat-card__name ml-1 description"
+    *ngIf="verseDetail.description"
+  >
     {{ verseDetail.description }}
   </span>
 </div>
