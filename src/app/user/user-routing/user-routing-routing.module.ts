@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SingleSurahComponent, HomeComponent } from '../pages';
+import { UserPageGuard } from '../user-page.guard';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
   {
     path: 'surah/:surahId',
     component: SingleSurahComponent,
+    canActivate:[UserPageGuard]
   },
 ];
 
