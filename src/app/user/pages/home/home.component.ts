@@ -40,6 +40,10 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(isSubHeader({ isSubHeader: false }));
   }
   ngOnInit(): void {
+    if (navigator.appVersion.includes('Linux')) {
+      document.body.classList.add('quran-font');
+    }
+
     if (localStorage.getItem('lang')) {
       this.store.dispatch(changeLanguage({ lang: this.lang }));
     }

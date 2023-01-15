@@ -17,7 +17,9 @@
     </div>
 
     <div class="surah-rightside flex align-center justify-center">
-      <div class="surah__name">{{ cardInfo.arabicName }}</div>
+      <div class="surah__name {{ className ? 'arabic-font' : '' }}">
+        {{ cardInfo.arabicName }}
+      </div>
       <span class="surah__ayat-info sub__info"
         >{{ cardInfo.verseCount }} Ayahs</span
       >
@@ -45,7 +47,9 @@
     </div>
 
     <div class="surah-rightside flex align-center justify-center">
-      <div class="surah__name">{{ juzSurah.arabicName }}</div>
+      <div class="surah__name {{ className ? 'arabic-font' : '' }}">
+        {{ juzSurah.arabicName }}
+      </div>
       <span class="surah__ayat-info sub__info"
         >{{ juzSurah.startOrderNumber }} -
         {{ juzSurah.endOrderNumber }} Ayahs</span

@@ -10,7 +10,7 @@ export class SurahListCardComponent {
   @Input() cardInfo!: Surah;
   @Input() juz!: Juz;
   recentlyRead: Surah[] = [];
-
+  className: boolean = document.body.classList.contains('quran-font');
   constructor() {
     if (localStorage.getItem('recently-read')) {
       this.recentlyRead = JSON.parse(
@@ -36,8 +36,10 @@ export class SurahListCardComponent {
   }
 
   reventlyHandler(surah: Surah) {
-    const idx = this.recentlyRead.findIndex((recently) => recently.surahId === surah.surahId)
-    if(!this.recentlyRead[idx]){
+    const idx = this.recentlyRead.findIndex(
+      (recently) => recently.surahId === surah.surahId
+    );
+    if (!this.recentlyRead[idx]) {
       this.recentlyRead = [...this.recentlyRead, surah];
       localStorage.setItem('recently-read', JSON.stringify(this.recentlyRead));
     }
