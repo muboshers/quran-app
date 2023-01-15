@@ -5,6 +5,10 @@
   font-family: "p1-v1";
   src: url("./assets/quran-font.ttf");
 }
+@font-face {
+  font-family: "ProximaVara";
+  src: url("./assets/proxima-vara.woff2");
+}
 
 .light-theme {
   --background-color: #f5f5f5;
@@ -39,7 +43,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "ProximaVara", sans-serif;
   transition: 0.2s ease;
 }
 .arabic-font {
