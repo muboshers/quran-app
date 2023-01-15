@@ -2,12 +2,13 @@
 @import url(https://fonts.googleapis.com/css2?family=Inder&display=swap);
 
 @font-face {
+  font-family: "ProximaVara";
+  src: url("./assets/me_quran2.1.ttf");
+}
+
+@font-face {
   font-family: "p1-v1";
   src: url("./assets/quran-font.ttf");
-}
-@font-face {
-  font-family: "ProximaVara";
-  src: url("./assets/proxima-vara.woff2");
 }
 
 .light-theme {
