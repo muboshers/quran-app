@@ -67,3 +67,22 @@
   max-width: 800px;
   margin: 30px auto;
 }
+
+.surah__read {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: right;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  &,
+  * {
+    background-color: var(--box-color);
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 38px;
+    
+  }
+}

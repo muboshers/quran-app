@@ -1,11 +1,13 @@
 <div class="container single-surah__main-container">
   <div class="single-surah__header flex align-center justify-center">
     <button
+      (click)="isTranslation = false"
       class="single-surah__header-btn {{ isTranslation ? 'active' : '' }}"
     >
       Translation
     </button>
     <button
+      (click)="isTranslation = true"
       class="single-surah__header-btn {{ !isTranslation ? 'active' : '' }}"
     >
       Reading
@@ -32,10 +34,18 @@
     </div>
   </div>
 
-  <div class="single-surah__lists">
+  <div class="single-surah__lists" *ngIf="!isTranslation">
     <app-ayat-card
       *ngFor="let surah of userState.verse"
       [verseDetail]="surah"
     ></app-ayat-card>
+  </div>
+</div>
+
+<div class="surah__read" *ngIf="isTranslation">
+  <div class="surah__read-container">
+    <p *ngFor="let surah of userState.verse">
+      {{ surah.arabic }}
+    </p>
   </div>
 </div>
