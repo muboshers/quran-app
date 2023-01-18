@@ -2,7 +2,6 @@ import {
   Authors,
   Juz,
   Language,
-  SingleDataSurah,
   Surah,
   SurahData,
   VerseBySurahs,
@@ -23,6 +22,7 @@ import {
   SINGLE__SURAH__HANDLER,
   authorChange,
   SINGLE__VERSE__HANDLER,
+  isSurah,
 } from './user.action';
 
 export interface userStataType {
@@ -39,6 +39,7 @@ export interface userStataType {
   verse?: VerseBySurahs[];
   singleSurah?: SurahData;
   selectedAuthor?: Authors;
+  isSurah?: Boolean;
 }
 
 export const initialState: userStataType = {
@@ -55,6 +56,7 @@ export const initialState: userStataType = {
   singleSurah: undefined,
   verse: undefined,
   selectedAuthor: undefined,
+  isSurah: true,
 };
 
 export const userReducer = createReducer(
@@ -62,6 +64,7 @@ export const userReducer = createReducer(
   on(openCategory, (state) => ({ ...state, category: !state.category })),
   on(openSetting, (state) => ({ ...state, setting: !state.setting })),
   on(isSubHeader, (state, { isSubHeader }) => ({ ...state, isSubHeader })),
+  on(isSurah, (state, { isSurah }) => ({ ...state, isSurah })),
   on(openSingleSurahModal, (state) => ({
     ...state,
     singleSurahModal: !state.singleSurahModal,

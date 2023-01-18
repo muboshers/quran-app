@@ -2,7 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { userStataType } from '../../store/reducer';
 import { UserServiceService } from '../../service/user-service.service';
-import { JUZ__HANDLER, SURAHS__HANDLER } from '../../store/user.action';
+import {
+  isSurah,
+  JUZ__HANDLER,
+  SURAHS__HANDLER,
+} from '../../store/user.action';
 
 @Component({
   selector: 'app-surah-list',
@@ -11,7 +15,6 @@ import { JUZ__HANDLER, SURAHS__HANDLER } from '../../store/user.action';
 })
 export class SurahListComponent implements OnInit {
   isSorting: boolean = false;
-  isJuzz: boolean = false;
   surahId!: number;
   isActiveCard: boolean = false;
   userController!: userStataType;
@@ -29,7 +32,7 @@ export class SurahListComponent implements OnInit {
 
   changeSorting() {
     this.isSorting = !this.isSorting;
-    if (this.isJuzz) {
+    if (this.userController.isSurah) {
       if (this.isSorting) {
         // get all juzz request
         this.userService
@@ -71,8 +74,8 @@ export class SurahListComponent implements OnInit {
   }
 
   changeSurahType(type: string) {
-    if (type === 'juzz') this.isJuzz = true;
-    else this.isJuzz = false;
+    if (type === 'juzz') this.store.dispatch(isSurah({ isSurah: true }));
+    else this.store.dispatch(isSurah({ isSurah: false }));
   }
 
   hoverHandler(isActive: boolean) {

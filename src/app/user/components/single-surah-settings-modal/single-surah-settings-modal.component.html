@@ -39,6 +39,7 @@
             class="flex align-center {{
               surah.surahId == activeSurah.surahId ? 'active' : ''
             }}"
+            (click)="routerReplace(surah.surahId)"
           >
             {{ surah.orderNumber }}
             <span style="font-size: 12px"> {{ surah.name }}</span>

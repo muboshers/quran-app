@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { userStataType } from '../../store/reducer';
@@ -19,7 +19,8 @@ export class SingleSurahSettingsModalComponent {
 
   constructor(
     private store: Store<{ user: userStataType }>,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.store.select('user').subscribe((result) => {
       this.useController = result;
@@ -44,5 +45,10 @@ export class SingleSurahSettingsModalComponent {
 
   arrayBuilder(i: number) {
     return new Array(i);
+  }
+
+  routerReplace(surahId: number) {
+    this.router.navigateByUrl(`/surah/${surahId}`);
+    this.store.dispatch(openSingleSurahModal());
   }
 }

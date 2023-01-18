@@ -7,40 +7,40 @@
 //   src: url("./assets/me_quran2.1.ttf");
 // }
 
-// @font-face {
-//   font-family: "p1-v1";
-//   src: url("./assets/quran-font.ttf");
-// }
+@font-face {
+  font-family: "arabic-regular";
+  src: url("./assets/arabic-font.ttf");
+}
 
-@font-face {
-  font-family: icon-surah;
-  src: url(https://cdn.qurancdn.com/assets/surah_names/surah_names-e5d677784e8d3b9e2aa39ce4e1c7c139b4974c508ea8a6ab8e23e2541cebacb8.eot);
-  src: url(https://cdn.qurancdn.com/assets/surah_names/surah_names-e5d677784e8d3b9e2aa39ce4e1c7c139b4974c508ea8a6ab8e23e2541cebacb8.eot#iefix)
-      format("embedded-opentype"),
-    url(https://cdn.qurancdn.com/assets/surah_names/surah_names-bdedc92b995e92e0b783e2c49aff5efa41d77f93da975fcb52e8bcc30f304c0e.woff2)
-      format("woff2"),
-    url(https://cdn.qurancdn.com/assets/surah_names/surah_names-72e41f0a6278536569f15f5c9c3691be164dcf28711da2dd7abf3b1e964a11f3.woff)
-      format("woff"),
-    url(https://cdn.qurancdn.com/assets/surah_names/surah_names-b44bca9a268fd4c4fce216028111da2568d3c58d56e211238f8cef420da72337.ttf)
-      format("truetype"),
-    url(https://cdn.qurancdn.com/assets/surah_names/surah_names-bfe5026d51aa3c0ae2d8c139823fd09caee76258f9bc69dc4ba2575c750b7da8.svg#surah_names)
-      format("svg");
-}
-@font-face {
-  font-family: bismillah;
-  src: url(https://cdn.qurancdn.com/assets/bismillah/bismillah-549e158d5b6487312b3012bebc8a9e8373ab47fe59c0addf5f6b354e084c6110.woff2),
-    url(https://cdn.qurancdn.com/assets/bismillah/bismillah-ea3a26c47922e4b140b100daf2e19beea114e295e89e6bfa71fc04731ff26da4.eot#iefix)
-      format("embedded-opentype"),
-    url(https://cdn.qurancdn.com/assets/bismillah/bismillah-d9a9025689ce35726e3472c240cf846829f469519d5d5f68b5a189e4b3ad7aec.woff)
-      format("woff"),
-    url(https://cdn.qurancdn.com/assets/bismillah/bismillah-ce8e4b2cf44ab8709fbe90189a9cb54b6a4dc31eb8ab7f6ae68a6403d58b9b69.ttf)
-      format("truetype"),
-    url(https://cdn.qurancdn.com/assets/bismillah/bismillah-fe942e2d133ab63cf8e33fb921007b8ffab0048656a8f34bfdc9161966257651.svg#bismillah)
-      format("svg");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: icon-surah;
+//   src: url(https://cdn.qurancdn.com/assets/surah_names/surah_names-e5d677784e8d3b9e2aa39ce4e1c7c139b4974c508ea8a6ab8e23e2541cebacb8.eot);
+//   src: url(https://cdn.qurancdn.com/assets/surah_names/surah_names-e5d677784e8d3b9e2aa39ce4e1c7c139b4974c508ea8a6ab8e23e2541cebacb8.eot#iefix)
+//       format("embedded-opentype"),
+//     url(https://cdn.qurancdn.com/assets/surah_names/surah_names-bdedc92b995e92e0b783e2c49aff5efa41d77f93da975fcb52e8bcc30f304c0e.woff2)
+//       format("woff2"),
+//     url(https://cdn.qurancdn.com/assets/surah_names/surah_names-72e41f0a6278536569f15f5c9c3691be164dcf28711da2dd7abf3b1e964a11f3.woff)
+//       format("woff"),
+//     url(https://cdn.qurancdn.com/assets/surah_names/surah_names-b44bca9a268fd4c4fce216028111da2568d3c58d56e211238f8cef420da72337.ttf)
+//       format("truetype"),
+//     url(https://cdn.qurancdn.com/assets/surah_names/surah_names-bfe5026d51aa3c0ae2d8c139823fd09caee76258f9bc69dc4ba2575c750b7da8.svg#surah_names)
+//       format("svg");
+// }
+// @font-face {
+//   font-family: bismillah;
+//   src: url(https://cdn.qurancdn.com/assets/bismillah/bismillah-549e158d5b6487312b3012bebc8a9e8373ab47fe59c0addf5f6b354e084c6110.woff2),
+//     url(https://cdn.qurancdn.com/assets/bismillah/bismillah-ea3a26c47922e4b140b100daf2e19beea114e295e89e6bfa71fc04731ff26da4.eot#iefix)
+//       format("embedded-opentype"),
+//     url(https://cdn.qurancdn.com/assets/bismillah/bismillah-d9a9025689ce35726e3472c240cf846829f469519d5d5f68b5a189e4b3ad7aec.woff)
+//       format("woff"),
+//     url(https://cdn.qurancdn.com/assets/bismillah/bismillah-ce8e4b2cf44ab8709fbe90189a9cb54b6a4dc31eb8ab7f6ae68a6403d58b9b69.ttf)
+//       format("truetype"),
+//     url(https://cdn.qurancdn.com/assets/bismillah/bismillah-fe942e2d133ab63cf8e33fb921007b8ffab0048656a8f34bfdc9161966257651.svg#bismillah)
+//       format("svg");
+//   font-weight: 400;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
 .light-theme {
   --background-color: #f5f5f5;
@@ -79,7 +79,7 @@
   transition: 0.2s ease;
 }
 .arabic-font {
-  font-family: bismillah, sans-serif !important;
+  font-family: arabic-regular, sans-serif !important;
 }
 body {
   color: var(--text-color);

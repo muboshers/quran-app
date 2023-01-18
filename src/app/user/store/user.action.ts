@@ -22,6 +22,11 @@ export const openSetting = createAction('[Settings Component] OpenSetting');
 export const openCategory = createAction('[Category Component] OpenCategory');
 export const changeLanguage = createAction('Langauge Change', props<IAction>());
 export const openSingleSurahModal = createAction('Open Single Surah Modal');
+export const isSurah = createAction(
+  '[Is Surah]',
+  props<{ isSurah: boolean }>()
+);
+
 export const authorChange = createAction(
   '[Author Change]',
   props<{ selectedAuthor: Authors }>()
