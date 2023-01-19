@@ -1,6 +1,22 @@
 .surah-page {
+  padding-top: 140px !important;
   padding: 0 5px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  bottom: 0;
+  max-width: 460px;
+  overflow-y: scroll;
+  box-shadow: var(--box-shadow);
+  left: -200%;
 
+  &.active-modal {
+    left: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
   &__header {
     justify-content: space-between;
     padding: 10px;
@@ -58,6 +74,7 @@
         border-radius: 45px;
         background-color: var(--box-color);
       }
+
       list-style-type: none;
       padding: 8px 20px;
       cursor: pointer;
@@ -95,6 +112,15 @@
         border-radius: 5px;
         cursor: pointer;
       }
+    }
+  }
+}
+
+.verse {
+  li {
+    &.active {
+      border-radius: 45px;
+      background-color: var(--box-color);
     }
   }
 }

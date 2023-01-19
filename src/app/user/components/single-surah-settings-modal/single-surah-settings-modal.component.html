@@ -1,75 +1,74 @@
-<app-modal
-  [dispatchType]="modalCloseAction"
-  position="left:0%;"
-  *ngIf="useController.singleSurahModal"
+<div
+  (click)="parentHandler($event)"
+  class="surah-page {{ useController.singleSurahModal ? 'active-modal' : '' }}"
 >
-  <div class="surah-page">
-    <div class="surah-page__header flex align-center">
-      <div class="surah-page__actions flex align-center">
-        <button
-          class="{{
-            !isJuzz ? 'active' : ''
-          }} main__button surah-page__header-btn"
-          (click)="isJuzz = false"
-        >
-          Surah
-        </button>
-        <button
-          class=" {{
-            isJuzz ? 'active' : ''
-          }} main__button surah-page__header-btn"
-          (click)="isJuzz = true"
-        >
-          Juz
-        </button>
-      </div>
+  <div class="surah-page__header flex align-center">
+    <div class="surah-page__actions flex align-center">
       <button
-        class="surah-page__header-action-close"
-        (click)="handleModalClose()"
+        class="{{
+          !isJuzz ? 'active' : ''
+        }} main__button surah-page__header-btn"
+        (click)="isJuzz = false"
       >
-        <fa-icon [icon]="faClose"></fa-icon>
+        Surah
+      </button>
+      <button
+        class=" {{
+          isJuzz ? 'active' : ''
+        }} main__button surah-page__header-btn"
+        (click)="isJuzz = true"
+      >
+        Juz
       </button>
     </div>
+    <button
+      class="surah-page__header-action-close"
+      (click)="handleModalClose()"
+    >
+      <fa-icon [icon]="faClose"></fa-icon>
+    </button>
+  </div>
 
-    <div *ngIf="!isJuzz" class="surah-page__surahs flex align-start">
-      <div class="surah-page__surahs-name">
-        <ul>
-          <li
-            *ngFor="let surah of useController.surahs"
-            class="flex align-center {{
-              surah.surahId == activeSurah.surahId ? 'active' : ''
-            }}"
-            (click)="routerReplace(surah.surahId)"
-          >
-            {{ surah.orderNumber }}
-            <span style="font-size: 12px"> {{ surah.name }}</span>
-          </li>
-        </ul>
-      </div>
-      <div class="surah-page__surahs-verse" *ngIf="activeSurah">
-        <ul>
-          <li
-            class="flex align-center"
-            *ngFor="
-              let surah of arrayBuilder(activeSurah.verseCount);
-              let i = index
-            "
-          >
-            {{ i + 1 }}
-            <span style="font-size: 12px">verse</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div *ngIf="isJuzz" class="surah-page__juz">
-      <input
-        type="text"
-        placeholder="Juzni qidirish"
-        class="surah-page__juz-search__input"
-      />
+  <div *ngIf="!isJuzz" class="surah-page__surahs flex align-start">
+    <div class="surah-page__surahs-name">
       <ul>
-        <li *ngFor="let juz of useController.juz">{{ juz.juzNumber }} Juzz</li>
+        <li
+          *ngFor="let surah of useController.surahs"
+          class="flex align-center {{
+            surah.surahId == activeSurah.surahId ? 'active' : ''
+          }}"
+          (click)="routerReplace(surah.surahId)"
+        >
+          {{ surah.orderNumber }}
+          <span style="font-size: 12px"> {{ surah.name }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="surah-page__surahs-verse" *ngIf="activeSurah">
+      <ul class="verse">
+        <li
+          *ngFor="
+            let surah of arrayBuilder(activeSurah.verseCount);
+            let i = index
+          "
+          routerLink="/surah/{{ surahId }}"
+          fragment="verse-{{ i + 1 }}"
+          class="flex align-center {{ verseHandler(i) }}"
+        >
+          {{ i + 1 }}
+          <span style="font-size: 12px">verse</span>
+        </li>
       </ul>
     </div>
   </div>
-</app-modal>
+  <div *ngIf="isJuzz" class="surah-page__juz">
+    <input
+      type="text"
+      placeholder="Juzni qidirish"
+      class="surah-page__juz-search__input"
+    />
+    <ul>
+      <li *ngFor="let juz of useController.juz">{{ juz.juzNumber }} Juzz</li>
+    </ul>
+  </div>
+</div>

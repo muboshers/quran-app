@@ -12,7 +12,6 @@ export class SingleSurahMainComponent {
   faPlayCircle = faPlayCircle;
 
   userState!: userStataType;
-
   constructor(private store: Store<{ user: userStataType }>) {
     this.store.select('user').subscribe((result) => {
       this.userState = result;

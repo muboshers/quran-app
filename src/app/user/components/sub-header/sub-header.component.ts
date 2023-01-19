@@ -9,14 +9,15 @@ import { openSingleSurahModal } from '../../store/user.action';
   selector: 'app-sub-header',
 })
 export class SubHeaderComponent {
-  userState!:userStataType;
+  userState!: userStataType;
   constructor(private store: Store<{ user: userStataType }>) {
     this.store.select('user').subscribe((result) => {
       this.userState = result;
     });
   }
 
-  handleOpenModal() {
+  handleOpenModal(event: Event) {
+    event.stopPropagation();
     this.store.dispatch(openSingleSurahModal());
   }
 }

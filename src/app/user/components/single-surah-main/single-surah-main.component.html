@@ -1,4 +1,8 @@
-<div class="container single-surah__main-container">
+<div
+  class="container single-surah__main-container {{
+    userState.singleSurahModal ? 'open-settings' : ''
+  }}"
+>
   <div class="single-surah__header flex align-center justify-center">
     <button
       (click)="isTranslation = false"
@@ -35,10 +39,12 @@
   </div>
 
   <div class="single-surah__lists" *ngIf="!isTranslation">
-    <app-ayat-card
-      *ngFor="let surah of userState.verse"
-      [verseDetail]="surah"
-    ></app-ayat-card>
+    <section
+      *ngFor="let surah of userState.verse; let i = index"
+      id="verse-{{ i + 1 }}"
+    >
+      <app-ayat-card [verseDetail]="surah"></app-ayat-card>
+    </section>
   </div>
 </div>
 

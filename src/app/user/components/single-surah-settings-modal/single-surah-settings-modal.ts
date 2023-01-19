@@ -16,7 +16,7 @@ export class SingleSurahSettingsModalComponent {
   activeSurah!: Surah;
   modalCloseAction = openSingleSurahModal;
   useController!: userStataType;
-
+  surahId!: number;
   constructor(
     private store: Store<{ user: userStataType }>,
     private route: ActivatedRoute,
@@ -27,6 +27,7 @@ export class SingleSurahSettingsModalComponent {
     });
     this.route.params.subscribe((params) => {
       if (params['surahId']) {
+        this.surahId = params['surahId'];
         this.store.select('user').subscribe((result) => {
           const surah = result.surahs?.find(
             (surah) => surah.surahId == params['surahId']
@@ -50,5 +51,14 @@ export class SingleSurahSettingsModalComponent {
   routerReplace(surahId: number) {
     this.router.navigateByUrl(`/surah/${surahId}`);
     this.store.dispatch(openSingleSurahModal());
+  }
+
+  verseHandler(index: number) {
+    const originalHash = window.location.hash[window.location.hash.length - 1];
+    return parseInt(originalHash) === index + 1 ? 'active' : '';
+  }
+
+  parentHandler(event: Event) {
+    event.stopPropagation();
   }
 }

@@ -11,6 +11,7 @@ import {
   isSubHeader,
   JUZ__HANDLER,
   LANGUAGE__HANDLER,
+  openSingleSurahModal,
   SINGLE__SURAH__HANDLER,
   SINGLE__VERSE__HANDLER,
   SURAHS__HANDLER,
@@ -118,6 +119,12 @@ export class SingleSurahComponent implements OnInit {
             });
         }
       });
+    }
+  }
+
+  modalClose() {
+    if (this.user.singleSurahModal) {
+      this.store.dispatch(openSingleSurahModal());
     }
   }
 }

@@ -1,5 +1,9 @@
 .single-surah__main-container {
   margin-top: 200px;
+
+  &.open-settings {
+    margin-left: 100px;
+  }
 }
 
 .single-surah__header {
@@ -83,6 +87,5 @@
   p {
     font-size: 1.2rem;
     line-height: 38px;
-    
   }
 }

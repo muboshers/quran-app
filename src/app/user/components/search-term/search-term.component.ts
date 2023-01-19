@@ -52,7 +52,27 @@ export class SearchTermComponent implements OnInit {
             this.store.dispatch(SURAHS__HANDLER({ surahs: result.data }));
           });
       }
-      this.searchFbGroup.controls['searchTerm'].setValue('');
+    } else {
+      if (this.userState.isSurah) {
+        this.userService
+          .getAllJuz({
+            value: '',
+            sortDirection: 'asc',
+          })
+          .subscribe((result) => {
+            this.store.dispatch(JUZ__HANDLER({ juz: result.data }));
+          });
+      } else {
+        this.userService
+          .getAllSurahByFilter({
+            value: '',
+            sortDirection: 'asc',
+          })
+          .subscribe((result) => {
+            this.store.dispatch(SURAHS__HANDLER({ surahs: result.data }));
+          });
+      }
     }
+    this.searchFbGroup.controls['searchTerm'].setValue('');
   }
 }

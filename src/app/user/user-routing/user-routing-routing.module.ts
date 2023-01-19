@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'surah/:surahId',
     component: SingleSurahComponent,
-    canActivate:[UserPageGuard]
+    canActivate: [UserPageGuard],
   },
 ];
 
