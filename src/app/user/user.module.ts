@@ -1,5 +1,6 @@
 import { isDevMode, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { UserRoutingRoutingModule } from './user-routing/user-routing-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -54,6 +55,7 @@ import { LoaderComponent } from './components/loader/loader.component';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     UserRoutingRoutingModule,
     FontAwesomeModule,
     StoreModule.forRoot({ user: userReducer }),

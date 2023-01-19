@@ -1,8 +1,13 @@
 <div class="search flex align-center">
   <div class="container d-flex justify-center align-center">
     <div class="search-box pt-05 blur-image pb-05 pl-1 pr-1 box">
-      <form class="flex align-center">
+      <form
+        (submit)="searchTerm($event)"
+        class="flex align-center"
+        [formGroup]="searchFbGroup"
+      >
         <input
+          formControlName="searchTerm"
           type="text"
           class="pl-1"
           [placeholder]="'user.banner.title' | translate"

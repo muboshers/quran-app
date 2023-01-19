@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "hspa-angular": {
+      "hosting": {
+        "hspa": [
+          "hspa-angular"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "quran-app-2561b"
+  }
+}
