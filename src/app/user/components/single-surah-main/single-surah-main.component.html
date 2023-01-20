@@ -50,7 +50,7 @@
 
 <div class="surah__read" *ngIf="isTranslation">
   <div class="surah__read-container">
-    <p *ngFor="let surah of userState.verse">
+    <p *ngFor="let surah of userState.verse" class="arabic-font">
       {{ surah.arabic }}
     </p>
   </div>

@@ -10,7 +10,6 @@ export class SurahListCardComponent {
   @Input() cardInfo!: Surah;
   @Input() juz!: Juz;
   recentlyRead: Surah[] = [];
-  className: boolean = document.body.classList.contains('quran-font');
   constructor() {
     if (localStorage.getItem('recently-read')) {
       this.recentlyRead = JSON.parse(

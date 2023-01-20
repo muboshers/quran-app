@@ -10,6 +10,5 @@ import { VerseBySurahs } from '../../types';
 export class AyatCardComponent {
   faMessage = faMessage;
   faDotCircle = faDotCircle;
-  className: boolean = document.body.classList.contains('quran-font');
   @Input() verseDetail!: VerseBySurahs;
 }
