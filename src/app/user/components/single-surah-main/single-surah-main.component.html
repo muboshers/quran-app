@@ -50,8 +50,12 @@
 
 <div class="surah__read" *ngIf="isTranslation">
   <div class="surah__read-container">
-    <p *ngFor="let surah of userState.verse" class="arabic-font">
-      {{ surah.arabic }}
+    <p class="arabic-font">
+      {{ userState.verse && userState.verse[verseIndex].arabic }}
     </p>
+  </div>
+  <div class="flex align-center justify-between surah__read-btn">
+    <button (click)="verseControl('prev')">Prev</button>
+    <button (click)="verseControl('next')">Next</button>
   </div>
 </div>

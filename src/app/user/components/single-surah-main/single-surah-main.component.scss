@@ -88,4 +88,17 @@
     font-size: 1.2rem;
     line-height: 38px;
   }
+
+  &-btn {
+
+    margin-top: 20px;
+    button {
+      color: var(--text-color);
+      cursor: pointer;
+      border-radius: 5px;
+      padding: 10px 12px;
+      box-shadow: var(--box-shadow);
+      border: 1px solid var(--background-color);
+    }
+  }
 }
