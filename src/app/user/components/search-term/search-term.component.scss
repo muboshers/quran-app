@@ -1,11 +1,5 @@
 .search {
-  min-height: 60vh;
-  position: relative;
-  z-index: 10;
-  background-color: transparent;
   &-box {
-    max-width: 550px;
-    width: 550px;
     border-radius: 45px;
     &:not(.container, .not-bg) {
       background-color: var(--box-color);
@@ -13,7 +7,7 @@
 
     form {
       width: 100%;
-
+      max-width: 100%;
       input {
         width: 90%;
         border: none;
@@ -27,9 +21,11 @@
         }
       }
     }
-
-    @media screen and (max-width: 768px) {
+  }
+  @media screen and (max-width: 768px) {
+    .container {
       width: 100%;
+      margin: 0;
     }
   }
 }

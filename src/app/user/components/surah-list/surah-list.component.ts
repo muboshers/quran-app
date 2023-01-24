@@ -74,7 +74,7 @@ export class SurahListComponent implements OnInit {
   }
 
   changeSurahType(type: string) {
-    if (type === 'juzz') this.store.dispatch(isSurah({ isSurah: true }));
+    if (type === 'surahs') this.store.dispatch(isSurah({ isSurah: true }));
     else this.store.dispatch(isSurah({ isSurah: false }));
   }
 

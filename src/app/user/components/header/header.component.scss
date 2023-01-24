@@ -28,4 +28,18 @@
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .header__leftside {
+      h4 {
+        display: none;
+      }
+    }
+    // .header_search {
+    //   // order: 1;
+    //   // margin-top: 8px;
+    //   // width: 100vw !important;
+    //   // flex-grow: 1;
+    // }
+  }
 }

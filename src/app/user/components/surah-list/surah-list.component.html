@@ -6,7 +6,7 @@
         <button
           (click)="changeSurahType('surahs')"
           class="surah__list-page-btn {{
-            !this.userController.isSurah && 'active'
+            this.userController.isSurah && 'active'
           }}"
         >
           Surah
@@ -14,7 +14,7 @@
         <button
           (click)="changeSurahType('juzz')"
           class="surah__list-page-btn {{
-            this.userController.isSurah && 'active'
+            !this.userController.isSurah && 'active'
           }}"
         >
           Juz
@@ -42,7 +42,7 @@
 
     <!-- MAIN SECTION -->
     <main
-      *ngIf="!this.userController.isSurah"
+      *ngIf="this.userController.isSurah"
       class="surah__list-surahs flex align-center justify-between"
     >
       <div class="surahs-card" *ngFor="let surah of userController.surahs">
@@ -51,7 +51,7 @@
     </main>
 
     <!-- JUZ-SURAH-LIST -->
-    <main *ngIf="this.userController.isSurah" class="juz__list-surahs">
+    <main *ngIf="!this.userController.isSurah" class="juz__list-surahs">
       <div class="juz__list-surahs-item" *ngFor="let juz of userController.juz">
         <app-surah-list-card [juz]="juz"></app-surah-list-card>
       </div>
