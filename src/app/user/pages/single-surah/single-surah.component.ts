@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { UserServiceService } from '../../service/user-service.service';
@@ -9,9 +9,9 @@ import {
   changeLanguage,
   isScrollHandler,
   isSubHeader,
-  JUZ__HANDLER,
   LANGUAGE__HANDLER,
   openSingleSurahModal,
+  JUZ__HANDLER,
   SINGLE__SURAH__HANDLER,
   SINGLE__VERSE__HANDLER,
   SURAHS__HANDLER,
@@ -23,7 +23,7 @@ import { Languages } from '../../types';
   styleUrls: ['./single-surah.component.scss'],
   selector: 'app-single-surah',
 })
-export class SingleSurahComponent implements OnInit {
+export class SingleSurahComponent implements OnInit, OnDestroy {
   user!: userStataType;
   lang = localStorage.getItem('lang')
     ? JSON.parse(localStorage.getItem('lang') || 'kiril')
@@ -126,5 +126,9 @@ export class SingleSurahComponent implements OnInit {
     if (this.user.singleSurahModal) {
       this.store.dispatch(openSingleSurahModal());
     }
+  }
+  ngOnDestroy(): void {
+    this.store.dispatch(SINGLE__VERSE__HANDLER({ verse: undefined }));
+    this.store.dispatch(SINGLE__SURAH__HANDLER({ singleSurah: undefined }));
   }
 }

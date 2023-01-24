@@ -39,7 +39,9 @@ export class SurahListCardComponent {
       (recently) => recently.surahId === surah.surahId
     );
     if (!this.recentlyRead[idx]) {
-      this.recentlyRead = [...this.recentlyRead, surah];
+      if (this.recentlyRead.length <= 6)
+        this.recentlyRead = [...this.recentlyRead, surah];
+
       localStorage.setItem('recently-read', JSON.stringify(this.recentlyRead));
     }
   }

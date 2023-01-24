@@ -6,13 +6,13 @@
   <div class="single-surah__header flex align-center justify-center">
     <button
       (click)="isTranslation = false"
-      class="single-surah__header-btn {{ isTranslation ? 'active' : '' }}"
+      class="single-surah__header-btn {{ !isTranslation ? 'active' : '' }}"
     >
       Translation
     </button>
     <button
       (click)="isTranslation = true"
-      class="single-surah__header-btn {{ !isTranslation ? 'active' : '' }}"
+      class="single-surah__header-btn {{ !isTranslation ? '' : 'active' }}"
     >
       Reading
     </button>

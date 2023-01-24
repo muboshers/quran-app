@@ -17,10 +17,15 @@
       {{ verseDetail.translation }}
     </span>
   </div>
-  <span
-    class="ayat-card__name ml-1 description"
-    *ngIf="verseDetail.description"
-  >
+  <span class="ayat-card__name ml-1 description" *ngIf="isDescription">
     {{ verseDetail.description }}
   </span>
+
+  <button
+    class="ayat-card__button main__button"
+    *ngIf="verseDetail.description"
+    (click)="showDescription()"
+  >
+    {{ isDescription ? "Tarjimani Yopish" : "Tarjimani ko'rish" }}
+  </button>
 </div>

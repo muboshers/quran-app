@@ -32,6 +32,7 @@ import {
 import { HomeComponent, SingleSurahComponent } from './pages';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './components/loader/loader.component';
+import { HomeBannerComponent } from './components/home-banner/home-banner.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -52,6 +53,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     SubHeaderComponent,
     AyatCardComponent,
     LoaderComponent,
+    HomeBannerComponent,
   ],
   imports: [
     CommonModule,

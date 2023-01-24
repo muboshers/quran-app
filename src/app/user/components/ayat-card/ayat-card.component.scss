@@ -9,9 +9,17 @@
   .ayat-card-rightside {
     max-width: 80%;
   }
-
+  .ayat-card__button {
+    width: inherit;
+    height: inherit;
+    border-radius: 5px;
+    padding: 10px 12px;
+    margin-top: 15px;
+    box-shadow: var(--box-shadow);
+  }
   .description {
-    border-top: 1px solid var(--text-color);
+    margin-top: 20px;
+    line-height: 20px;
   }
   &,
   * {

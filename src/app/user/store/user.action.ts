@@ -58,10 +58,10 @@ export const AUTHORS__HANDLER = createAction(
 
 export const SINGLE__SURAH__HANDLER = createAction(
   '[Single Surah Handler]',
-  props<{ singleSurah: SurahData }>()
+  props<{ singleSurah?: SurahData }>()
 );
 
 export const SINGLE__VERSE__HANDLER = createAction(
   '[Single Surah Verse]',
-  props<{ verse: VerseBySurahs[] }>()
+  props<{ verse?: VerseBySurahs[] }>()
 );

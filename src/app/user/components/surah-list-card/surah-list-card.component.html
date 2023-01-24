@@ -29,11 +29,11 @@
 <div class="juzz__list-card" *ngIf="juz">
   <h4>{{ juz.juzNumber }} {{ "user.surah_card.juz" | translate }}</h4>
   <div
-    routerLink="surah/3"
     class="surah flex align-center justify-between"
     (mousemove)="mouseHandler($event)"
     (mouseleave)="mouseDestroyHandler($event)"
     *ngFor="let juzSurah of juz.surahs"
+    routerLink="surah/{{ juzSurah.surahId }}"
   >
     <div class="surah-leftside flex align-center">
       <button class="main__button surah__button mr-1">

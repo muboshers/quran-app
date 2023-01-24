@@ -10,5 +10,10 @@ import { VerseBySurahs } from '../../types';
 export class AyatCardComponent {
   faMessage = faMessage;
   faDotCircle = faDotCircle;
+  isDescription: boolean = false;
   @Input() verseDetail!: VerseBySurahs;
+
+  showDescription() {
+    this.isDescription = !this.isDescription;
+  }
 }

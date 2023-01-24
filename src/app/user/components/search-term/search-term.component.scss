@@ -1,11 +1,8 @@
 .search {
-  background-size: contain;
-  background-repeat: no-repeat;
   min-height: 60vh;
-  background-position: center;
-  background-color: rgb(209, 209, 209);
-  background-image: url("https://wallpaper.dog/large/20515343.jpg");
-
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
   &-box {
     max-width: 550px;
     width: 550px;
