@@ -9,7 +9,7 @@
   overflow-y: scroll;
   box-shadow: var(--box-shadow);
   left: -200%;
-
+  background-color: var(--box-color);
   &.active-modal {
     left: 0;
   }

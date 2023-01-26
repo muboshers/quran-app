@@ -1,13 +1,10 @@
 .search {
   &-box {
     border-radius: 45px;
-    &:not(.container, .not-bg) {
-      background-color: var(--box-color);
-    }
-
+    box-shadow: var(--button-shadow);
     form {
-      width: 100%;
-      max-width: 100%;
+      height: 35px;
+      width: 250px;
       input {
         width: 90%;
         border: none;
@@ -15,13 +12,20 @@
         font-size: 14px;
         background-color: transparent;
         color: var(--text-color);
-
         &::placeholder {
           color: var(--text-color);
+          opacity: 0.5;
         }
+      }
+
+      .search_button {
+        width: 34px;
+        height: 34px;
+        border-radius: 17px;
       }
     }
   }
+
   @media screen and (max-width: 768px) {
     .container {
       width: 100%;

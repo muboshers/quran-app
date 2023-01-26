@@ -58,6 +58,7 @@
   --icon-color: #1a1a1a;
   --secondary-light-color: #f3f3ee;
   --secondary-box-shadow: rgb(0 0 0 / 15%) 0px 3px 3px 0px;
+  --button-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
 }
 
 .dark-theme {
@@ -77,6 +78,7 @@
   --secondary-light-color: #1f1f27;
   --secondary-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  --button-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
 }
 *,
 *::after,
@@ -102,9 +104,6 @@ body {
 }
 
 div {
-  &:not(.container, .not-bg) {
-    background-color: var(--background-color);
-  }
   &.wrapper,
   &.box {
     box-shadow: var(--box-shadow);
@@ -127,10 +126,13 @@ div {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 20px;
   cursor: pointer;
+  box-shadow: var(--button-shadow);
+  transition: 0.2s ease;
   &:hover {
-    background-color: var(--hover-bg-color);
+    color: var(--off-white);
+    background-color: var(--dark-green);
   }
 }
 h3,

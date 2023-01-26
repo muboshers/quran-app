@@ -22,24 +22,12 @@
     line-height: 20px;
   }
   &,
-  * {
+  &:no-button {
     background-color: var(--box-color);
   }
-
-  button {
-    &,
-    * {
-      background-color: var(--background-color);
-    }
-    &:nth-child(2) {
-      margin: 10px 0;
-    }
-
-    &:hover {
-      opacity: 0.9;
-    }
+  button:nth-child(2) {
+    margin-top: 10px;
   }
-
   .ayat-card__name {
     display: block;
   }

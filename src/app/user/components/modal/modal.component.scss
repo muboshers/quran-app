@@ -20,6 +20,7 @@
     padding: 10px 12px;
     height: 100vh;
     overflow-x: scroll;
+    background-color: var(--box-color);
   }
   @media screen and (max-width: 575px) {
     &__close-btn {

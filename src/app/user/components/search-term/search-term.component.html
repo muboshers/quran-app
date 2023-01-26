@@ -1,6 +1,6 @@
 <div class="search flex align-center">
   <div class="container d-flex justify-center align-center">
-    <div class="search-box pt-05 blur-image pb-05 pl-1 pr-1 box">
+    <div class="search-box">
       <form
         (submit)="searchTerm($event)"
         class="flex align-center"
@@ -13,7 +13,7 @@
           [placeholder]="'user.banner.title' | translate"
         />
 
-        <button type="submit" class="main__button blur-image ml-1">
+        <button type="submit" class="main__button search_button">
           <fa-icon [icon]="faSearch"></fa-icon>
         </button>
       </form>
