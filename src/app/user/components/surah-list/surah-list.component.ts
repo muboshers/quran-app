@@ -32,7 +32,7 @@ export class SurahListComponent implements OnInit {
 
   changeSorting() {
     this.isSorting = !this.isSorting;
-    if (this.userController.isSurah) {
+    if (!this.userController.isSurah) {
       if (this.isSorting) {
         // get all juzz request
         this.userService

@@ -22,19 +22,19 @@
       </div>
       <!-- Sorting section -->
       <div class="flex align-center surah__list-sorting">
-        <span>Sort By</span>
+        <span>SORT BY</span>
         <ul class="surah__list-drop">
           <li
             (click)="changeSorting()"
             class="surah__list-drop-item {{ isSorting ? 'active' : '' }}"
           >
-            Accending
+            ASC
           </li>
           <li
             (click)="changeSorting()"
             class="surah__list-drop-item {{ !isSorting ? 'active' : '' }}"
           >
-            Descending
+            DESC
           </li>
         </ul>
       </div>
