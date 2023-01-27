@@ -3,58 +3,49 @@
     <!-- HEADER -->
     <div class="surah__list-header">
       <div class="surah__list-page">
-        <button
-          (click)="changeSurahType('surahs')"
-          class="surah__list-page-btn {{
-            this.userController.isSurah && 'active'
-          }}"
-        >
-          Surah
-        </button>
-        <button
-          (click)="changeSurahType('juzz')"
-          class="surah__list-page-btn {{
-            !this.userController.isSurah && 'active'
-          }}"
-        >
-          Juz
-        </button>
-      </div>
-      <!-- Sorting section -->
-      <div class="flex align-center surah__list-sorting">
-        <span>SORT BY</span>
-        <ul class="surah__list-drop">
-          <li
-            (click)="changeSorting()"
-            class="surah__list-drop-item {{ isSorting ? 'active' : '' }}"
+        <div class="flex action_button align-center">
+          <button
+            (click)="changeSurahType('surahs')"
+            class="surah__list-page-btn {{
+              this.userController.isSurah && 'active'
+            }}"
           >
-            ASC
-          </li>
-          <li
-            (click)="changeSorting()"
-            class="surah__list-drop-item {{ !isSorting ? 'active' : '' }}"
+            Surah
+          </button>
+          <button
+            (click)="changeSurahType('juzz')"
+            class="surah__list-page-btn {{
+              !this.userController.isSurah && 'active'
+            }}"
           >
-            DESC
-          </li>
-        </ul>
+            Juz
+          </button>
+        </div>
+        <select class="surah__list-page-sort" (change)="changeSorting()">
+          <option value="asc" [selected]="isSorting">ASC</option>
+          <option value="decs" [selected]="!isSorting">DESC</option>
+        </select>
       </div>
+
+      <!-- MAIN SECTION -->
+      <main
+        *ngIf="this.userController.isSurah"
+        class="surah__list-surahs flex align-center justify-between"
+      >
+        <div class="surahs-card" *ngFor="let surah of userController.surahs">
+          <app-surah-list-card [cardInfo]="surah"></app-surah-list-card>
+        </div>
+      </main>
+
+      <!-- JUZ-SURAH-LIST -->
+      <main *ngIf="!this.userController.isSurah" class="juz__list-surahs">
+        <div
+          class="juz__list-surahs-item"
+          *ngFor="let juz of userController.juz"
+        >
+          <app-surah-list-card [juz]="juz"></app-surah-list-card>
+        </div>
+      </main>
     </div>
-
-    <!-- MAIN SECTION -->
-    <main
-      *ngIf="this.userController.isSurah"
-      class="surah__list-surahs flex align-center justify-between"
-    >
-      <div class="surahs-card" *ngFor="let surah of userController.surahs">
-        <app-surah-list-card [cardInfo]="surah"></app-surah-list-card>
-      </div>
-    </main>
-
-    <!-- JUZ-SURAH-LIST -->
-    <main *ngIf="!this.userController.isSurah" class="juz__list-surahs">
-      <div class="juz__list-surahs-item" *ngFor="let juz of userController.juz">
-        <app-surah-list-card [juz]="juz"></app-surah-list-card>
-      </div>
-    </main>
   </div>
 </div>

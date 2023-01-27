@@ -36,7 +36,7 @@ export class SurahListComponent implements OnInit {
       if (this.isSorting) {
         // get all juzz request
         this.userService
-          .getAllJuz({ value: 'string', sortDirection: 'desc' })
+          .getAllJuz({ value: '', sortDirection: 'asc' })
           .subscribe((juz) => {
             this.store.dispatch(
               JUZ__HANDLER({
@@ -47,7 +47,7 @@ export class SurahListComponent implements OnInit {
       } else {
         // get all juzz request
         this.userService
-          .getAllJuz({ value: 'string', sortDirection: 'asc' })
+          .getAllJuz({ value: '', sortDirection: 'desc' })
           .subscribe((juz) => {
             this.store.dispatch(
               JUZ__HANDLER({
@@ -59,13 +59,13 @@ export class SurahListComponent implements OnInit {
     } else {
       if (this.isSorting) {
         this.userService
-          .getAllSurahByFilter({ value: '', sortDirection: 'desc' })
+          .getAllSurahByFilter({ value: '', sortDirection: 'asc' })
           .subscribe((result) => {
             this.store.dispatch(SURAHS__HANDLER({ surahs: result.data }));
           });
       } else {
         this.userService
-          .getAllSurahByFilter({ value: '', sortDirection: 'asc' })
+          .getAllSurahByFilter({ value: '', sortDirection: 'desc' })
           .subscribe((result) => {
             this.store.dispatch(SURAHS__HANDLER({ surahs: result.data }));
           });

@@ -4,7 +4,7 @@
     box-shadow: var(--button-shadow);
     form {
       height: 35px;
-      width: 250px;
+      width: 350px;
       input {
         width: 90%;
         border: none;
@@ -18,11 +18,14 @@
         }
       }
 
-      .search_button {
-        width: 34px;
-        height: 34px;
-        border-radius: 17px;
-      }
+      // .search_button {
+      //   width: 34px;
+      //   height: 34px;
+      //   border-radius: 17px;
+      //   background-color: none;
+      //   color: var(--text-color);
+        
+      // }
     }
   }
 
