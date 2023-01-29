@@ -1,38 +1,80 @@
 .search {
+  flex-direction: column;
+  position: relative;
+  &.active {
+    .search-box {
+      border-radius: 14px;
+      border-color: var(--dark-green);
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      .search_button {
+        color: var(--dark-green);
+      }
+
+      form {
+        width: 350px;
+      }
+    }
+  }
+
   &-box {
+    border: 1.5px solid transparent;
     border-radius: 45px;
     box-shadow: var(--button-shadow);
+    border-bottom-color: transparent;
+    position: relative;
+
     form {
       height: 35px;
-      width: 350px;
+      width: 200px;
+      transition: 0.2s ease;
       input {
         width: 90%;
         border: none;
         outline: none;
         font-size: 14px;
         background-color: transparent;
-        color: var(--text-color);
+        color: var(--silver);
+        &::focus {
+          background-color: aqua;
+        }
         &::placeholder {
           color: var(--text-color);
-          opacity: 0.5;
         }
       }
 
-      // .search_button {
-      //   width: 34px;
-      //   height: 34px;
-      //   border-radius: 17px;
-      //   background-color: none;
-      //   color: var(--text-color);
-        
-      // }
+      .search_button {
+        background: transparent;
+        box-shadow: inherit;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        width: 100%;
+        margin: 0;
+      }
     }
   }
 
-  @media screen and (max-width: 768px) {
-    .container {
-      width: 100%;
-      margin: 0;
+  .search_active {
+    width: 100%;
+    position: absolute;
+    bottom: -191px;
+    border-top-color: transparent;
+    // background-color: rgba(68, 68, 68, 0.329);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    border: 1.5px solid var(--dark-green);
+    clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+    transition: 0.4s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    &.active {
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+    }
+    .search_default-item {
+      padding: 10px 1rem;
+      cursor: pointer;
     }
   }
 }

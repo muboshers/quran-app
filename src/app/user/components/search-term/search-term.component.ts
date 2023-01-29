@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { debounceTime, fromEvent, map, Observable, of } from 'rxjs';
+import { Surah } from './../../types';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { UserServiceService } from '../../service/user-service.service';
@@ -12,11 +13,14 @@ import { JUZ__HANDLER, SURAHS__HANDLER } from '../../store/user.action';
 })
 export class SearchTermComponent implements OnInit {
   faSearch = faSearch;
-  searchFbGroup!: FormGroup;
   userState!: userStataType;
+  searchInput?: ElementRef;
+  search$!: Observable<string>;
+  searchResult!: Surah[];
+  isFocus: boolean = false;
   constructor(
-    private formBuilder: FormBuilder,
     private userService: UserServiceService,
+    private el: ElementRef,
     private store: Store<{ user: userStataType }>
   ) {
     this.store.select('user').subscribe((result) => {
@@ -25,54 +29,33 @@ export class SearchTermComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.searchFbGroup = this.formBuilder.group({
-      searchTerm: ['', Validators.required],
-    });
+    this.searchInput = this.el.nativeElement.querySelector('#search-input');
+    // if (this.searchInput) {
+    //   this.search$ = fromEvent(this.searchInput, 'input').pipe(
+    //     map((event: any) => event.target.value),
+    //     debounceTime(500)
+    //   );
+    // }
   }
 
   searchTerm(event: Event) {
     event.preventDefault();
-    if (this.searchFbGroup.valid) {
-      if (this.userState.isSurah) {
-        this.userService
-          .getAllJuz({
-            value: this.searchFbGroup.value['searchTerm'],
-            sortDirection: 'asc',
-          })
-          .subscribe((result) => {
-            this.store.dispatch(JUZ__HANDLER({ juz: result.data }));
-          });
-      } else {
-        this.userService
-          .getAllSurahByFilter({
-            value: this.searchFbGroup.value['searchTerm'],
-            sortDirection: 'asc',
-          })
-          .subscribe((result) => {
-            this.store.dispatch(SURAHS__HANDLER({ surahs: result.data }));
-          });
-      }
-    } else {
-      if (this.userState.isSurah) {
-        this.userService
-          .getAllJuz({
-            value: '',
-            sortDirection: 'asc',
-          })
-          .subscribe((result) => {
-            this.store.dispatch(JUZ__HANDLER({ juz: result.data }));
-          });
-      } else {
-        this.userService
-          .getAllSurahByFilter({
-            value: '',
-            sortDirection: 'asc',
-          })
-          .subscribe((result) => {
-            this.store.dispatch(SURAHS__HANDLER({ surahs: result.data }));
-          });
-      }
-    }
-    this.searchFbGroup.controls['searchTerm'].setValue('');
+  }
+  searchSurah(searchTerm: string) {
+    const timeHandler = setTimeout(() => {
+      this.userService
+        .getAllSurahByFilter({
+          value: searchTerm,
+          sortDirection: 'asc',
+        })
+        .subscribe({
+          next: (result) => {
+            this.searchResult = result.data;
+          },
+          error(err) {
+            console.warn(err.message);
+          },
+        });
+    }, 500);
   }
 }

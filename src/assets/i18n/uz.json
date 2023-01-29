@@ -12,13 +12,13 @@
       }
     },
     "banner": {
-      "title": "Suralarni ismi bilan qidirish"
+      "title": "Qidirish"
     },
     "main": {
       "recently": "Oldingi o'qilganlar"
     },
-    "surah_card":{
-      "juz":"Juz"
+    "surah_card": {
+      "juz": "Juz"
     }
   }
 }

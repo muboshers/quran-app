@@ -39,6 +39,15 @@
   </div>
 
   <div class="single-surah__lists" *ngIf="!isTranslation">
+    <ngx-skeleton-loader
+      count="3"
+      appearance="line"
+      animation="pulse"
+    >
+    <div style="height: 50px; width: 50px;">
+
+    </div>
+  </ngx-skeleton-loader>
     <section
       *ngFor="let surah of userState.verse; let i = index"
       id="verse-{{ i + 1 }}"

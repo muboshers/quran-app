@@ -1,15 +1,14 @@
-<div class="search flex align-center">
-  <div class="container d-flex justify-center align-center">
+<div class="search flex  align-center {{ isFocus ? 'active' : '' }}">
+  <div class="d-flex justify-center align-center">
     <div class="search-box">
-      <form
-        (submit)="searchTerm($event)"
-        class="flex align-center"
-        [formGroup]="searchFbGroup"
-      >
+      <form (submit)="searchTerm($event)" class="flex align-center">
         <input
-          formControlName="searchTerm"
+          #searchBar
           type="text"
           class="pl-1"
+          (focus)="isFocus = true"
+          (blur)="isFocus = false"
+          (keyup)="searchSurah(searchBar.value)"
           [placeholder]="'user.banner.title' | translate"
         />
 
@@ -17,6 +16,40 @@
           <fa-icon [icon]="faSearch"></fa-icon>
         </button>
       </form>
+    </div>
+    <div class="search_active blur-image {{ isFocus ? 'active' : '' }}">
+      <div class="search_default">
+        <div class="search_default-item flex justify-between">
+          <div class="search_default-item_name">Al Mulk</div>
+          <span class="search_default-item_icon">
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </span>
+        </div>
+        <div class="search_default-item flex align-center justify-between">
+          <div class="search_default-item_name">Al Mulk</div>
+          <span class="search_default-item_icon">
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </span>
+        </div>
+        <div class="search_default-item flex align-center justify-between">
+          <div class="search_default-item_name">Yaseen</div>
+          <span class="search_default-item_icon">
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </span>
+        </div>
+        <div class="search_default-item flex align-center justify-between">
+          <div class="search_default-item_name">Ayatul Kursi</div>
+          <span class="search_default-item_icon">
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </span>
+        </div>
+        <div class="search_default-item flex align-center justify-between">
+          <div class="search_default-item_name">Al Waqi'ah</div>
+          <span class="search_default-item_icon">
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
