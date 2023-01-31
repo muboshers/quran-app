@@ -39,15 +39,22 @@
   </div>
 
   <div class="single-surah__lists" *ngIf="!isTranslation">
-    <ngx-skeleton-loader
-      count="3"
-      appearance="line"
-      animation="pulse"
-    >
-    <div style="height: 50px; width: 50px;">
-
+    <div class="card" *ngIf="!userState.verse">
+      <div class="header">
+        <div class="header-leftside">
+          <div class="img"></div>
+          <div class="img"></div>
+        </div>
+        <div class="details">
+          <span class="about"></span>
+        </div>
+      </div>
+      <div class="description">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+        <div class="line line-3"></div>
+      </div>
     </div>
-  </ngx-skeleton-loader>
     <section
       *ngFor="let surah of userState.verse; let i = index"
       id="verse-{{ i + 1 }}"

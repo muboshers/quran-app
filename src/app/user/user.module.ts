@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserRoutingRoutingModule } from './user-routing/user-routing-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -61,7 +60,6 @@ import { HomeBannerComponent } from './components/home-banner/home-banner.compon
     ReactiveFormsModule,
     UserRoutingRoutingModule,
     FontAwesomeModule,
-    NgxSkeletonLoaderModule,
     StoreModule.forRoot({ user: userReducer }),
     HttpClientModule,
     StoreDevtoolsModule.instrument({
