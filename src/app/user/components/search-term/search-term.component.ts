@@ -1,26 +1,34 @@
-import { debounceTime, fromEvent, map, Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+
 import { Surah } from './../../types';
-import { Component, ElementRef, OnInit } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { UserServiceService } from '../../service/user-service.service';
 import { userStataType } from '../../store/reducer';
 import { JUZ__HANDLER, SURAHS__HANDLER } from '../../store/user.action';
+import { fromEvent } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 @Component({
   selector: 'app-search-term',
   templateUrl: './search-term.component.html',
   styleUrls: ['./search-term.component.scss'],
 })
-export class SearchTermComponent implements OnInit {
+export class SearchTermComponent implements OnInit, AfterViewInit {
+  @ViewChild('searchBar') input!: ElementRef;
   faSearch = faSearch;
   userState!: userStataType;
-  searchInput?: ElementRef;
-  search$!: Observable<string>;
   searchResult!: Surah[];
   isFocus: boolean = false;
   constructor(
     private userService: UserServiceService,
-    private el: ElementRef,
+    private router: Router,
     private store: Store<{ user: userStataType }>
   ) {
     this.store.select('user').subscribe((result) => {
@@ -28,16 +36,24 @@ export class SearchTermComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.searchInput = this.el.nativeElement.querySelector('#search-input');
-    // if (this.searchInput) {
-    //   this.search$ = fromEvent(this.searchInput, 'input').pipe(
-    //     map((event: any) => event.target.value),
-    //     debounceTime(500)
-    //   );
-    // }
-  }
+  ngOnInit(): void {}
+  ngAfterViewInit(): void {
+    this.input.nativeElement.addEventListener(
+      'focus',
+      () => (this.isFocus = true)
+    );
+    this.input.nativeElement.addEventListener(
+      'blur',
+      () => (this.isFocus = false)
+    );
 
+    fromEvent<InputEvent>(this.input.nativeElement, 'input')
+      .pipe(debounceTime(500))
+      .subscribe((event) => {
+        const value = (event.target as HTMLInputElement).value;
+        this.searchSurah(value);
+      });
+  }
   searchTerm(event: Event) {
     event.preventDefault();
   }
@@ -57,5 +73,9 @@ export class SearchTermComponent implements OnInit {
           },
         });
     }, 500);
+  }
+
+  routerReplace(surahId: number) {
+    this.router.navigateByUrl(`/surah/${surahId}`);
   }
 }

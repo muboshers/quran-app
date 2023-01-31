@@ -6,9 +6,6 @@
           #searchBar
           type="text"
           class="pl-1"
-          (focus)="isFocus = true"
-          (blur)="isFocus = false"
-          (keyup)="searchSurah(searchBar.value)"
           [placeholder]="'user.banner.title' | translate"
         />
 
@@ -18,33 +15,61 @@
       </form>
     </div>
     <div class="search_active blur-image {{ isFocus ? 'active' : '' }}">
-      <div class="search_default">
-        <div class="search_default-item flex justify-between">
+      <div class="search_default" *ngIf="!searchResult">
+        <div
+          class="search_default-item flex justify-between"
+          (click)="routerReplace(1)"
+        >
           <div class="search_default-item_name">Al Mulk</div>
           <span class="search_default-item_icon">
             <fa-icon [icon]="faSearch"></fa-icon>
           </span>
         </div>
-        <div class="search_default-item flex align-center justify-between">
+        <div
+          class="search_default-item flex align-center justify-between"
+          (click)="routerReplace(1)"
+        >
           <div class="search_default-item_name">Al Mulk</div>
           <span class="search_default-item_icon">
             <fa-icon [icon]="faSearch"></fa-icon>
           </span>
         </div>
-        <div class="search_default-item flex align-center justify-between">
+        <div
+          class="search_default-item flex align-center justify-between"
+          (click)="routerReplace(1)"
+        >
           <div class="search_default-item_name">Yaseen</div>
           <span class="search_default-item_icon">
             <fa-icon [icon]="faSearch"></fa-icon>
           </span>
         </div>
-        <div class="search_default-item flex align-center justify-between">
+        <div
+          class="search_default-item flex align-center justify-between"
+          (click)="routerReplace(1)"
+        >
           <div class="search_default-item_name">Ayatul Kursi</div>
           <span class="search_default-item_icon">
             <fa-icon [icon]="faSearch"></fa-icon>
           </span>
         </div>
-        <div class="search_default-item flex align-center justify-between">
+
+        <div
+          class="search_default-item flex align-center justify-between"
+          (click)="routerReplace(1)"
+        >
           <div class="search_default-item_name">Al Waqi'ah</div>
+          <span class="search_default-item_icon">
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </span>
+        </div>
+      </div>
+      <div class="search__default" *ngIf="searchResult">
+        <div
+          class="search_default-item flex justify-between"
+          *ngFor="let search of searchResult"
+          (click)="routerReplace(search.surahId)"
+        >
+          <div class="search_default-item_name">{{ search.name }}</div>
           <span class="search_default-item_icon">
             <fa-icon [icon]="faSearch"></fa-icon>
           </span>
