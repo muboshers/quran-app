@@ -3,7 +3,10 @@
     userState.singleSurahModal ? 'open-settings' : ''
   }}"
 >
-  <div class="single-surah__header flex align-center justify-center">
+  <div
+    class="single-surah__header flex align-center justify-center"
+    *ngIf="userState.verse"
+  >
     <button
       (click)="isTranslation = false"
       class="single-surah__header-btn {{ !isTranslation ? 'active' : '' }}"
@@ -18,10 +21,16 @@
     </button>
   </div>
 
-  <div class="single-surah-sub__info flex align-center justify-center">
+  <div
+    class="single-surah-sub__info flex align-center justify-center"
+    *ngIf="userState.verse"
+  >
     {{ userState.singleSurah?.surah?.name }}
   </div>
-  <div class="surah-actions flex align-center justify-between">
+  <div
+    class="surah-actions flex align-center justify-between"
+    *ngIf="userState.verse"
+  >
     <div class="surah-actions__leftside">
       <p class="surah-actions__leftside-subinfo">Translation By</p>
       <h4 class="surah-author__name">
@@ -29,10 +38,7 @@
       </h4>
     </div>
     <div class="surah-actions__rightside">
-      <button
-        class="main__button action__button"
-        data-before-content="Play Audio"
-      >
+      <button class="main__button" data-before-content="Play Audio">
         <fa-icon [icon]="faPlayCircle"></fa-icon>
       </button>
     </div>
