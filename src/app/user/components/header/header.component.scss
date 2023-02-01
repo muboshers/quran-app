@@ -3,19 +3,21 @@
   top: -100px;
   width: 100%;
   display: block;
-  box-shadow: var(--secondary-box-shadow);
-  background-color: var(--secondary-light-color);
   z-index: 1001;
+
   transition: 0.8s ease;
   &.active-nav {
     top: 0;
   }
 
-  &.shadow-none {
-    box-shadow: inherit;
-    background-color: var(--box-color);
-  }
+  .sub-header {
+    background-color: transparent;
+    margin-top: 10px;
 
+    .sub-header__surah-name {
+      cursor: pointer;
+    }
+  }
   @media screen and (max-width: 768px) {
     .header__leftside {
       h4 {
@@ -28,5 +30,35 @@
     //   // width: 100vw !important;
     //   // flex-grow: 1;
     // }
+  }
+}
+
+.navigation {
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  padding-left: 28px;
+  padding-top: 10px;
+  min-height: 100vh;
+  width: 300px;
+  left: -300%;
+  border-right: 1px solid var(--dark-green);
+  z-index: 1007;
+  transition: 0.3s ease;
+  &.active {
+    left: 0;
+  }
+  .navigation_content {
+    height: 100%;
+    overflow: auto;
+    padding-top: 30px;
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: var(--box-color);
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: var(--dark-green);
+    }
   }
 }

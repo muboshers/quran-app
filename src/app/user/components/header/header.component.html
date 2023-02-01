@@ -1,12 +1,13 @@
 <div
   id="main-topHeader"
-  class="header wrapper pt-1 pb-1 {{
+  class="header blur-image shadow-none wrapper pt-1 pb-1 {{
     userController.isScroll ? 'active-nav' : ''
-  }} {{ userController.isSubHeader ? 'shadow-none' : '' }} "
+  }}"
+  (click)="$event.stopPropagation()"
 >
   <div class="container header__container flex align-center justify-between">
     <div class="header__leftside flex align-center">
-      <button class="main__button">
+      <button class="main__button" (click)="isActiveMenu = true">
         <fa-icon [icon]="faBars"></fa-icon>
       </button>
       <h4 routerLink="/" class="ml-1 cursor-pointer">
@@ -25,5 +26,33 @@
         <fa-icon [icon]="faGear"></fa-icon>
       </button>
     </div>
+  </div>
+  <div
+    class="sub-header {{
+      userController.isScroll ? 'main__header-active' : ''
+    }}"
+  >
+    <div class="sub-header__container container flex">
+      <h4 (click)="handleOpenModal($event)" class="sub-header__surah-name">
+        {{ userController.singleSurah?.surahName }}
+      </h4>
+    </div>
+  </div>
+</div>
+
+<div
+  class="navigation blur-image {{ isActiveMenu && 'active' }}"
+  (click)="$event.stopPropagation()"
+>
+  <div class="header__leftside flex align-center">
+    <button class="main__button" (click)="isActiveMenu = false">
+      <fa-icon [icon]="faClose"></fa-icon>
+    </button>
+    <h4 routerLink="/" class="ml-1 cursor-pointer">
+      {{ "user.header.title" | translate }}
+    </h4>
+  </div>
+  <div class="navigation_content">
+    <app-recently-surah></app-recently-surah>
   </div>
 </div>

@@ -70,7 +70,6 @@ export const userReducer = createReducer(
     singleSurahModal: !state.singleSurahModal,
   })),
   on(changeLanguage, (state, { lang }) => ({ ...state, lang })),
-  on(isScrollHandler, (state, { isScroll }) => ({ ...state, isScroll })),
   on(authorChange, (state, { selectedAuthor }) => ({
     ...state,
     selectedAuthor,

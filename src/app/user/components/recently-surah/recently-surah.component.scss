@@ -1,27 +1,28 @@
 .recently {
-  margin-top: 30px;
-  &__container {
-    background-color: var(--background-color);
-  }
-  &__title {
-    font-weight: 500;
+  &__action {
+    width: inherit;
+    height: inherit;
+    padding: 7px 12px;
   }
   &__list {
-    margin-top: 15px;
-    flex-wrap: wrap;
-    gap: 10px;
-    &-item {
-      width: 180px;
+    flex-direction: column;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: 0.3s ease;
+    &.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
-  }
+    &-item {
+      margin-top: 5px;
+      cursor: pointer;
+      padding: 5px 15px;
+      position: relative;
+      border-radius: 8px;
+      background-color: var(--box-color);
+      transition: 0.4s ease;
 
-  @media screen and (max-width: 480px) {
-    &__list {
-      flex-direction: column;
-
-      &-item {
-        width: 100%;
-        max-width: 100%;
+      &:hover {
+        background-color: var(--dark-green);
+        color: var(--text-color);
       }
     }
   }

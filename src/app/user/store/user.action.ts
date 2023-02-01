@@ -3,7 +3,6 @@ import {
   Authors,
   Juz,
   Language,
-  SingleDataSurah,
   Surah,
   SurahData,
   VerseBySurahs,

@@ -10,10 +10,8 @@ import { SearchTermComponent } from './search-term/search-term.component';
 import { SettingSectionComponent } from './setting-section/setting-section.component';
 import { SingleSurahMainComponent } from './single-surah-main/single-surah-main.component';
 import { SingleSurahSettingsModalComponent } from './single-surah-settings-modal/single-surah-settings-modal';
-import { SubHeaderComponent } from './sub-header/sub-header.component';
 import { SurahListCardComponent } from './surah-list-card/surah-list-card.component';
 import { SurahListComponent } from './surah-list/surah-list.component';
-
 export {
   ModalComponent,
   FooterComponent,
@@ -23,7 +21,6 @@ export {
   SearchTermComponent,
   SurahListCardComponent,
   RecentlySurahComponent,
-  SubHeaderComponent,
   SettingSectionComponent,
   CategorySectionComponent,
   SingleSurahMainComponent,

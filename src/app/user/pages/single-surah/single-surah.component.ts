@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { TranslateService } from '@ngx-translate/core';
 import { UserServiceService } from '../../service/user-service.service';
 import { userStataType } from '../../store/reducer';
 import {
@@ -34,7 +35,8 @@ export class SingleSurahComponent implements OnInit, OnDestroy {
   constructor(
     private store: Store<{ user: userStataType }>,
     private activatedRoute: ActivatedRoute,
-    private userService: UserServiceService
+    private userService: UserServiceService,
+    private translate: TranslateService
   ) {
     this.store.dispatch(isSubHeader({ isSubHeader: true }));
     this.store.select('user').subscribe((result) => {
@@ -67,7 +69,7 @@ export class SingleSurahComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.store.dispatch(isScrollHandler({ isScroll: true }));
-
+    this.translate.use(this.lang);
     if (!this.user.authors) {
       if (localStorage.getItem('lang')) {
         this.store.dispatch(changeLanguage({ lang: this.lang }));

@@ -23,7 +23,6 @@ import {
   SettingSectionComponent,
   SingleSurahMainComponent,
   SingleSurahSettingsModalComponent,
-  SubHeaderComponent,
   SurahListCardComponent,
   SurahListComponent,
 } from './components';
@@ -50,7 +49,6 @@ import { HomeBannerComponent } from './components/home-banner/home-banner.compon
     CategorySectionComponent,
     SingleSurahComponent,
     SingleSurahSettingsModalComponent,
-    SubHeaderComponent,
     AyatCardComponent,
     LoaderComponent,
     HomeBannerComponent,
@@ -75,7 +73,7 @@ import { HomeBannerComponent } from './components/home-banner/home-banner.compon
         useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
-      defaultLanguage: 'en',
+      defaultLanguage: 'uz',
     }),
   ],
 })

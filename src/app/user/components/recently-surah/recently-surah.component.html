@@ -1,7 +1,12 @@
-<div class="recently not-bg" *ngIf="recentlySurah !== ''">
+<div class="recently" *ngIf="recentlySurah !== ''">
+  <button
+    class="recently__action main__button"
+    (click)="isRecently = !isRecently"
+  >
+    {{ "user.main.recently" | translate }}
+  </button>
   <div class="container recently__container">
-    <h4 class="recently__title">{{ "user.main.recently" | translate }}</h4>
-    <div class="recently__list not-bg flex align-center">
+    <div class="recently__list {{ isRecently && 'active' }}">
       <div class="recently__list-item" *ngFor="let surah of recentlySurah">
         <app-recently-surah-card [surah]="surah"></app-recently-surah-card>
       </div>
