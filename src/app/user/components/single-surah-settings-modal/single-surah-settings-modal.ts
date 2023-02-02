@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { userStataType } from '../../store/reducer';
-import { openSingleSurahModal } from '../../store/user.action';
 import { Surah } from '../../types';
 @Component({
   templateUrl: './single-surah-settings-modal.component.html',
@@ -14,7 +13,6 @@ export class SingleSurahSettingsModalComponent {
   faClose = faClose;
   isJuzz = false;
   activeSurah!: Surah;
-  modalCloseAction = openSingleSurahModal;
   useController!: userStataType;
   surahId!: number;
   constructor(
@@ -40,9 +38,6 @@ export class SingleSurahSettingsModalComponent {
     });
   }
 
-  handleModalClose() {
-    this.store.dispatch(openSingleSurahModal());
-  }
 
   arrayBuilder(i: number) {
     return new Array(i);
@@ -50,7 +45,7 @@ export class SingleSurahSettingsModalComponent {
 
   routerReplace(surahId: number) {
     this.router.navigateByUrl(`/surah/${surahId}`);
-    this.store.dispatch(openSingleSurahModal());
+    
   }
 
   verseHandler(index: number) {

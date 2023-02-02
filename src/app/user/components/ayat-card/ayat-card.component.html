@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="ayat-card__footer flex align-center">
-    <span class="ayat-card__name ml-1">
+    <span class="ayat-card__name ml-1" *ngIf="!isDescription">
       {{ verseDetail.translation }}
     </span>
   </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faPlayCircle } from '@fortawesome/free-regular-svg-icons';
 import { Store } from '@ngrx/store';
 import { userStataType } from '../../store/reducer';
@@ -9,6 +9,7 @@ import { VerseBySurahs } from '../../types';
   selector: 'app-single-surah-main',
 })
 export class SingleSurahMainComponent implements OnInit {
+  @Input() paramsId!: number;
   isTranslation: boolean = false;
   faPlayCircle = faPlayCircle;
   pageNumber: number = 1;

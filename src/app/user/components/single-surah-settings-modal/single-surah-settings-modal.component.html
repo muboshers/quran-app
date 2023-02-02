@@ -1,7 +1,4 @@
-<div
-  (click)="parentHandler($event)"
-  class="surah-page {{ useController.singleSurahModal ? 'active-modal' : '' }}"
->
+<div (click)="parentHandler($event)" class="surah-page active-modal">
   <div class="surah-page__header flex align-center">
     <div class="surah-page__actions flex align-center">
       <button
@@ -21,12 +18,7 @@
         Juz
       </button>
     </div>
-    <button
-      class="surah-page__header-action-close"
-      (click)="handleModalClose()"
-    >
-      <fa-icon [icon]="faClose"></fa-icon>
-    </button>
+    
   </div>
 
   <div *ngIf="!isJuzz" class="surah-page__surahs flex align-start">

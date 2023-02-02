@@ -1,8 +1,6 @@
 <div
   id="main-topHeader"
-  class="header blur-image shadow-none wrapper pt-1 pb-1 {{
-    userController.isScroll ? 'active-nav' : ''
-  }}"
+  class="header blur-image shadow-none wrapper pt-1 pb-1 active-nav"
   (click)="$event.stopPropagation()"
 >
   <div class="container header__container flex align-center justify-between">
@@ -11,7 +9,11 @@
         <fa-icon [icon]="faBars"></fa-icon>
       </button>
       <h4 routerLink="/" class="ml-1 cursor-pointer">
-        {{ "user.header.title" | translate }}
+        {{
+          userController.singleSurah
+            ? userController.singleSurah.surahName
+            : ("user.header.title" | translate)
+        }}
       </h4>
     </div>
 
@@ -27,17 +29,15 @@
       </button>
     </div>
   </div>
-  <div
+  <!-- <div
     class="sub-header {{
       userController.isScroll ? 'main__header-active' : ''
     }}"
   >
     <div class="sub-header__container container flex">
-      <h4 (click)="handleOpenModal($event)" class="sub-header__surah-name">
-        {{ userController.singleSurah?.surahName }}
-      </h4>
+      <h4 (click)="handleOpenModal($event)" class="sub-header__surah-name"></h4>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <div
@@ -53,6 +53,9 @@
     </h4>
   </div>
   <div class="navigation_content">
-    <app-recently-surah></app-recently-surah>
+    <div *ngIf="!userController.singleSurah">
+      <app-recently-surah></app-recently-surah>
+    </div>
+    <ng-content *ngIf="userController.singleSurah"></ng-content>
   </div>
 </div>

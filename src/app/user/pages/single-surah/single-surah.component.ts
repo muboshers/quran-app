@@ -26,6 +26,7 @@ import { Languages } from '../../types';
 })
 export class SingleSurahComponent implements OnInit, OnDestroy {
   user!: userStataType;
+  paramsId!: number;
   lang = localStorage.getItem('lang')
     ? JSON.parse(localStorage.getItem('lang') || 'kiril')
     : 'uz';
@@ -45,6 +46,7 @@ export class SingleSurahComponent implements OnInit, OnDestroy {
 
     this.activatedRoute.params.subscribe((params) => {
       if (params['surahId']) {
+        this.paramsId = params['surahId'];
         if (this.user.selectedAuthor) {
           this.userService
             .getVerseDetail({
@@ -124,11 +126,7 @@ export class SingleSurahComponent implements OnInit, OnDestroy {
     }
   }
 
-  modalClose() {
-    if (this.user.singleSurahModal) {
-      this.store.dispatch(openSingleSurahModal());
-    }
-  }
+  modalClose() {}
   ngOnDestroy(): void {
     this.store.dispatch(SINGLE__VERSE__HANDLER({ verse: undefined }));
     this.store.dispatch(SINGLE__SURAH__HANDLER({ singleSurah: undefined }));

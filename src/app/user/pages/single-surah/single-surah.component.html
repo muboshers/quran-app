@@ -1,7 +1,8 @@
 <div (click)="modalClose()">
-  <app-header></app-header>
+  <app-header>
+    <single-surah-settings-modal></single-surah-settings-modal>
+  </app-header>
   <app-setting-section></app-setting-section>
-  <single-surah-settings-modal></single-surah-settings-modal>
-  <app-single-surah-main></app-single-surah-main>
+  <app-single-surah-main [paramsId]="paramsId"></app-single-surah-main>
   <app-footer></app-footer>
 </div>

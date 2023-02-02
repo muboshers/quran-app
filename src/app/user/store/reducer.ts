@@ -13,8 +13,6 @@ import {
   openSetting,
   changeLanguage,
   isSubHeader,
-  isScrollHandler,
-  openSingleSurahModal,
   LANGUAGE__HANDLER,
   SURAHS__HANDLER,
   JUZ__HANDLER,
@@ -30,8 +28,6 @@ export interface userStataType {
   setting: boolean;
   readonly lang: string;
   isSubHeader: boolean;
-  isScroll: boolean;
-  singleSurahModal: boolean;
   language?: Language[];
   surahs?: Surah[];
   juz?: Juz[];
@@ -47,8 +43,6 @@ export const initialState: userStataType = {
   setting: false,
   lang: 'uz',
   isSubHeader: false,
-  isScroll: true,
-  singleSurahModal: false,
   language: undefined,
   surahs: undefined,
   juz: undefined,
@@ -65,10 +59,7 @@ export const userReducer = createReducer(
   on(openSetting, (state) => ({ ...state, setting: !state.setting })),
   on(isSubHeader, (state, { isSubHeader }) => ({ ...state, isSubHeader })),
   on(isSurah, (state, { isSurah }) => ({ ...state, isSurah })),
-  on(openSingleSurahModal, (state) => ({
-    ...state,
-    singleSurahModal: !state.singleSurahModal,
-  })),
+ 
   on(changeLanguage, (state, { lang }) => ({ ...state, lang })),
   on(authorChange, (state, { selectedAuthor }) => ({
     ...state,

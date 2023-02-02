@@ -34,8 +34,9 @@
 }
 
 .single-surah-sub__info {
-  margin-top: 20px;
   font-size: 80px;
+  margin-top: 20px;
+  flex-direction: column;
 }
 
 .surah-actions {

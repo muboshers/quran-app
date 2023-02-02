@@ -4,9 +4,11 @@
   src: url("./assets/arabic-font.ttf");
 }
 
+
+// $variable-name:#0000;
 .light-theme {
-  --background-color: #f5f5f5;
   --off-white: #f5f5f5;
+  --background-color: var(--off-white);
   --white: #ffffff;
   --black: #000000;
   --silver: #e2e2e2;
@@ -24,10 +26,10 @@
 }
 
 .dark-theme {
-  --dark-green: #325335;
-  --blue-gray: #353746;
+  --dark-green: #06783e;
+  --blue-gray: #35463b;
   --onyx: #1f1f27;
-  --silver-mist: #cacaca;
+  --silver: #cacaca;
   --background-color: #1f1f27;
   --text-color: #cacaca;
   --box-color: #353746;
@@ -63,6 +65,15 @@ body {
   &.disable-scroll {
     position: fixed;
     width: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--box-color);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--dark-green);
   }
 }
 
