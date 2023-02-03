@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
   faUserFriends = faUserFriends;
   faGear = faGears;
   faClose = faClose;
+  isSiteMap: boolean = false;
   userController!: userStataType;
   prevScrollpos: number = window.pageYOffset;
   topPosition!: number;

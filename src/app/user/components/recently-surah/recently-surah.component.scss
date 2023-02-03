@@ -1,14 +1,21 @@
 .recently {
+  position: relative;
+  margin-bottom: 15px;
+  .container {
+    padding: 0;
+  }
   &__action {
-    width: inherit;
-    height: inherit;
-    padding: 7px 12px;
+    width: 100%;
+    border-radius: 8px;
   }
   &__list {
     flex-direction: column;
+    position: absolute;
+    width: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: 0.3s ease;
     &.active {
+      position: relative;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
     &-item {

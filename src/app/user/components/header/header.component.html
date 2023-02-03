@@ -53,9 +53,19 @@
     </h4>
   </div>
   <div class="navigation_content">
-    <div *ngIf="!userController.singleSurah">
+    <div>
       <app-recently-surah></app-recently-surah>
     </div>
-    <ng-content *ngIf="userController.singleSurah"></ng-content>
+    <div *ngIf="userController.singleSurah">
+      <button
+        class="main__button navigation_content-btn mb-1"
+        (click)="isSiteMap = !isSiteMap"
+      >
+        Site haritasi
+      </button>
+      <single-surah-settings-modal
+        *ngIf="isSiteMap"
+      ></single-surah-settings-modal>
+    </div>
   </div>
 </div>
