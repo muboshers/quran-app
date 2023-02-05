@@ -1,32 +1,45 @@
 .recently {
   position: relative;
   margin-bottom: 15px;
+  background-color: #ffffff20;
+  border-radius: 8px;
+
+  &.active {
+    border-radius: 8px;
+
+    .recently__action {
+      border-radius: 8px 8px 0 0;
+    }
+    .recently__list {
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
   .container {
     padding: 0;
   }
   &__action {
     width: 100%;
+    box-shadow: inherit;
     border-radius: 8px;
+    background-color: #ffffff20;
   }
   &__list {
     flex-direction: column;
+    padding: 0 5px 5px 5px;
     position: absolute;
     width: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: 0.3s ease;
-    &.active {
-      position: relative;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
+
     &-item {
       margin-top: 5px;
       cursor: pointer;
       padding: 5px 15px;
       position: relative;
       border-radius: 8px;
-      background-color: var(--box-color);
+      background-color: #ffffff10;
       transition: 0.4s ease;
-
       &:hover {
         background-color: var(--dark-green);
         color: var(--text-color);

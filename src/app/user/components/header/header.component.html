@@ -56,9 +56,9 @@
     <div>
       <app-recently-surah></app-recently-surah>
     </div>
-    <div *ngIf="userController.singleSurah">
+    <div *ngIf="userController.singleSurah" class="main__sitemap">
       <button
-        class="main__button navigation_content-btn mb-1"
+        class="main__button navigation_content-btn mb-1 {{isSiteMap && 'active'}}"
         (click)="isSiteMap = !isSiteMap"
       >
         Site haritasi

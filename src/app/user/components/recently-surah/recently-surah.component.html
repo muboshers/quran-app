@@ -1,4 +1,4 @@
-<div class="recently" *ngIf="recentlySurah !== ''">
+<div class="recently {{ isRecently && 'active' }}" *ngIf="recentlySurah !== ''">
   <button
     class="recently__action main__button"
     (click)="isRecently = !isRecently"
@@ -6,7 +6,7 @@
     {{ "user.main.recently" | translate }}
   </button>
   <div class="container recently__container">
-    <div class="recently__list {{ isRecently && 'active' }}">
+    <div class="recently__list">
       <div class="recently__list-item" *ngFor="let surah of recentlySurah">
         <app-recently-surah-card [surah]="surah"></app-recently-surah-card>
       </div>

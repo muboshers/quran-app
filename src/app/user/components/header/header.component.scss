@@ -24,12 +24,6 @@
         display: none;
       }
     }
-    // .header_search {
-    //   // order: 1;
-    //   // margin-top: 8px;
-    //   // width: 100vw !important;
-    //   // flex-grow: 1;
-    // }
   }
 }
 
@@ -39,7 +33,7 @@
   position: fixed;
   z-index: 100;
   padding-left: 28px;
-  padding: 10px 10px 0 10px;
+  padding: 10px 0px 0 10px;
   height: 100vh;
   width: 300px;
   left: -300%;
@@ -51,11 +45,21 @@
   }
   .navigation_content {
     height: 100%;
+    padding: 30px 10px 35px 0;
     overflow: auto;
-    padding-top: 30px;
+    .main__sitemap {
+      border-radius: 8px;
+      background-color: #ffffff10;
+    }
     &-btn {
       width: 100%;
       border-radius: 8px;
+      background-color: #ffffff20;
+      margin-bottom: 5px;
+
+      &.active {
+        border-radius: 8px 8px 0 0;
+      }
     }
     &::-webkit-scrollbar {
       width: 5px;

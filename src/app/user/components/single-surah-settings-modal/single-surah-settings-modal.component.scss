@@ -1,5 +1,6 @@
 .surah-page {
   width: 100%;
+  padding: 0 5px;
   max-width: 350px;
   overflow-y: auto;
   &.active-modal {
@@ -32,7 +33,7 @@
       }
 
       &.active {
-        background-color: var(--box-color);
+        background-color: var(--dark-green);
       }
     }
 
@@ -64,7 +65,7 @@
     li {
       &.active {
         border-radius: 45px;
-        background-color: var(--box-color);
+        background-color: var(--dark-green);
       }
 
       list-style-type: none;
@@ -74,7 +75,7 @@
         margin: 0 5px;
       }
       &:hover {
-        background-color: var(--box-color);
+        background-color: var(--dark-green);
         border-radius: 45px;
       }
     }
