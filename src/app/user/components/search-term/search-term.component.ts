@@ -5,14 +5,13 @@ import {
   ElementRef,
   OnInit,
   ViewChild,
+  HostListener,
 } from '@angular/core';
-
 import { Surah } from './../../types';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { UserServiceService } from '../../service/user-service.service';
 import { userStataType } from '../../store/reducer';
-import { JUZ__HANDLER, SURAHS__HANDLER } from '../../store/user.action';
 import { fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 @Component({
@@ -77,5 +76,20 @@ export class SearchTermComponent implements OnInit, AfterViewInit {
 
   routerReplace(surahId: number) {
     this.router.navigateByUrl(`/surah/${surahId}`);
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.ctrlKey && event.key === 'k') {
+      event.preventDefault();
+      this.isFocus = true;
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  handleClickeableEvent(event: KeyboardEvent) {
+    if (this.isFocus) {
+      this.isFocus = false;
+    }
   }
 }

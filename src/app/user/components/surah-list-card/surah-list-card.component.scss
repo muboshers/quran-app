@@ -5,11 +5,12 @@
   cursor: pointer;
   border: 2px solid transparent;
   &:hover {
-    border-color: var(--hover-bg-color);
+    border-color: var(--dark-green);
+    background-color: var(--dark-green);
     .surah {
       &__button {
         color: #f3f3f3 !important;
-        background-color: var(--hover-bg-color) !important;
+        background-color: var(--dark-green) !important;
       }
     }
   }
@@ -59,6 +60,4 @@
       }
     }
   }
-
-  
 }

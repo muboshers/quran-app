@@ -62,7 +62,7 @@ export class UserServiceService {
   // get verse by id
   getVerseDetail(params: VerseBySurahLang) {
     return this.http.get<VerseBySurahs[]>(
-      `${API_URL}/${API_VERSION}/verse/by-surah-lang?authorId=${params.authorId}&langId=${LANGUAGE_ID}&surahId=${params.surahId}`
+      `${API_URL}/${API_VERSION}/verse/list-by/surah-lang-author?authorId=${params.authorId}&langId=${LANGUAGE_ID}&surahId=${params.surahId}`
     );
   }
 }

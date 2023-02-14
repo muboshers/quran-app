@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Display:wght@100;200;300;400;500;600;700&display=swap");
+
 @font-face {
   font-family: "arabic-regular";
   src: url("./assets/arabic-font.ttf");
@@ -13,7 +16,7 @@
   --silver: #e2e2e2;
   --dark-green: #325335;
   --text-color: #1a1a1a;
-  --box-color: #fffafa;
+  --box-color: #325335a5;
   --button-color: #fdfdfd;
   --box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
   --hover-bg-color: #325335;
@@ -51,9 +54,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Noto Sans Display", sans-serif;
+  // font-family: "Noto Sans Display", sans-serif;
 }
 .arabic-font {
-  font-family: arabic-regular, sans-serif !important;
+  // font-family: arabic-regular, sans-serif !important;
+  // font-family: "Noto Sans Display", sans-serif;
+  font-family: "Noto Sans Display", sans-serif;
   font-size: 22px;
   margin-bottom: 15px;
 }
@@ -123,7 +129,7 @@ div {
 
 .main__button {
   background-color: var(--box-color);
-  color: var(--icon-color);
+  color: var(--text-color);
   border: none;
   outline: none;
   width: 40px;

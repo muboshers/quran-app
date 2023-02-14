@@ -115,8 +115,17 @@
 
 <div class="surah__read" *ngIf="isTranslation">
   <div class="surah__read-container">
-    <p class="arabic-font" *ngFor="let verse of userState.verse">
-      {{ verse.arabic }}
-    </p>
+    <div
+      *ngFor="let verse of userState.verse"
+      dir="rtl"
+      style="display: inline;"
+    >
+      <span class="arabic-font">
+        {{ verse.arabic }}
+      </span>
+      <span class="arabic__number arabic-font"
+        >&#xFD3F; {{ arabicNumber(verse.orderNumber) }} &#xFD3E;
+      </span>
+    </div>
   </div>
 </div>

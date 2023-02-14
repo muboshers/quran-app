@@ -1,4 +1,7 @@
-<div class="search flex  align-center {{ isFocus ? 'active' : '' }}">
+<div
+  class="search flex  align-center {{ isFocus ? 'active' : '' }}"
+  (click)="$event.stopPropagation()"
+>
   <div class="d-flex justify-center align-center">
     <div class="search-box">
       <form (submit)="searchTerm($event)" class="flex align-center">
@@ -8,7 +11,11 @@
           class="pl-1"
           [placeholder]="'user.banner.title' | translate"
         />
-
+        <div class="search__control d-flex align-center">
+          <span class="search__control-line">ctrl</span>
+          <span class="search__control-line">+</span>
+          <span class="search__control-line">k</span>
+        </div>
         <button type="submit" disabled class="main__button search_button">
           <fa-icon [icon]="faSearch"></fa-icon>
         </button>
